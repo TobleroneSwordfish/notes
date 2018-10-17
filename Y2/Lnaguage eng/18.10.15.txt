@@ -20,7 +20,7 @@ This works because EmptyF :: ListF a k for any a or k even that mess above
 Note that the type of In is:
 > In :: f(Fix f) -> Fix f
 
-So the example above si where f = ListF a
+So the example above is where f = ListF a
 
 > In (ConsF 5 (In EmptyF))
 	     |      |
@@ -91,7 +91,7 @@ AADGJSAFSLDO;PV'LO:kOKSFLDSsdf
 
 Here is another function:
 
-> toList' :: Fux (ListF a) -> [a]
+> toList' :: Fix (ListF a) -> [a]
 > toList' = cata alg
 > where
 > 	alg :: ListF a [a] -> [a]

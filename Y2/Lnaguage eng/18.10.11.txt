@@ -22,7 +22,7 @@ but we do not want to modify any existing code (incl def of Expr)
 Again, we want to extend the semantics without modifying code
 In this case we can just write a function of type Expr -> b
 
-To stufy the expression problem, we will study the generalization of folds called a catamorphism
+To study the expression problem, we will study the generalization of folds called a catamorphism
 We do this because folds are a way of reducing data structures in a composable way
 and syntax trees are just data structures
 
@@ -88,3 +88,5 @@ Let's define these functions:
 > fromList :: List a -> Fix (ListF a)
 > fromList Empty = In EmptyF
 EmptyF has type f (Fix f) = ListF a (Fix (ListF a))
+
+nerds say In :: f (Fix f) -> Fix f
