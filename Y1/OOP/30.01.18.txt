@@ -1,0 +1,71 @@
+javajavajavajavajavajavajava
+Well it was out of a lawnmower engine, so a few hundred RPM, maybe thousand?
+I have never heard a method called a message
+Yadayada exceptions yada
+
+Java.lang.nullReferenceException - object reference was not set to an instance of an object
+
+Although actually Null, Nil, and Nothing are all slightly different in some languages
+Oh, and they all aren't 0
+
+Null is often good practice when you want something to fail loudly
+
+Heap illuminati
+
+Bronze?
+prawns
+No squishy
+More squishy
+gum
+BAH
+liquorice?
+More squishy
+human flesh?
+How squishy is human flesh?
+i wouldn't know 
+Ask Lucas
+you ask lucas
+
+Oh goddamnit Java
+You were doing so well
+
+you alright mate? did i piss you off too much?
+Define too much
+how much did i piss you off on a scale of 0-10?
+See, I was always terrible at those
+They always ask you to rate pain on a scale, IT FUCKING HURTS ALRIGHT
+Many
+Doctors always ask it if you have any kind of pain
+And tbh much of my childhood was pain
+bc lactose?
+Yup
+
+ME
+DYNAMIC ARRAYS ARE LIT
+you'll be lit when i set you on fire
+That is the ultimate destination of the poking
+You find more and more annoying things
+Until the only thing more annoying
+Is to literally set me on fire
+define set on fire
+bc setting your sleeve on fire would be hilarious
+but killing you with fire would be counterintuitive cause i wouldn't be able to annoy you anymore
+
+Had someone set my jacket on fire once
+Bastard
+But then to be fair he also set his brother's fringe on fire, so I guess I got off lightly
+especially with your hair
+
+I love that notation
+
+for (Thing thing : things)
+
+Hmph, blueberry
+
+Never heard of it
+
+So p is just a reference to null that you got from the array
+It's local to the loop
+
+I wonder how long we'll be able to get away with public members before the get/set nazis arrive...
+

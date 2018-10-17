@@ -1,0 +1,57 @@
+if [a] is a value then it is a single element list, if it is a type then it can be any length list.
+I want to make that now, a compiler where errors are screams. You could indicate error codes by pitch and volume.
+Severity could be tone, ie blood curdling death for critical failure.
+stdlib.h is Prelude
+Right, so the left one returns a list of a where the two lists have been stuck together
+The right one returns a list where the two elements ARE the lists passed in
+Like that? That's valid code
+A list with three elements, x, xs and ys
+Try to align equal signs.
+You'll have to up your artistic talent until he shows it.
+
+--Pattern guards--
+filter :: (a -> Bool) -> [a] -> [a]
+filter p [] = []
+filter p (x:xs) if p x then x:filter p xs
+		       else   filter p xs
+if then else conditional can be replaced with a pattern guard
+filter :: (a -> Bool) -> [a] -> [a]
+filter p [] = []
+filter p (x:xs) | p x       = x:filter p xs
+		| otherwise =   filter p xs
+
+otherwise is a boolean that equals True
+Implicit casting is evil. Looking at you VB.
+
+Pattern guards should not be confused with constructor alternatives
+For instance
+> data Day = Monday | Tuesday | ...
+or
+> data Bool = True
+	    | False
+
+Types and constructors must start with capitals
+
+Every function takes ONE argument and outputs ONE value
+
+add :: (Int, Int) -> Int
+add (x,y) = x + y
+
+plus :: Int -> Int -> Int - this type could be writtne as Int -> (Int -> Int)
+plus x y = x + y
+
+plusTwo :: Int -> Int
+plusTwo y = 2 + y
+
+plusTwo y = plus 2 y
+
+type of plus 2, we have plus 2 :: Int -> Int
+
+We can convert between add and plus using currying (named after Haskell. B. Curry)
+
+The idea is that we want this equivalence:
+curry add = plus
+add = uncurry plus
+
+--Homework--
+define curry and uncurry

@@ -1,0 +1,38 @@
+Yup, is still January
+And blackboard is still broken
+Amazing
+
+github.com/conorhoughton/COMS10007
+Again
+
+He's actually using reddit, the bloody madman
+r/COMS10007
+
+Carl's cool
+
+Carl Henrik Ek, he mentioned him
+He's my personal tutor
+
+Insert
+T(n) = An^2 + Bn + C
+  So something like O(n^2)
+
+Basically, it has a nested loop, it's probably n^2
+
+O(n^2) is the set of functions that go to infinity at worst as fast as n^2
+
+O(n^2) includes O(n) and O(1) algorithms
+
+O(n^2) algorithm may execute in O(n) time or less
+
+Did he just put chalk in his mouth...?
+
+Also vampire jacket
+
+We are witnessing a man having a Bad Day
+
+Also no reddit spam yet, I am disappointed guys
+
+So as x -> infinity, f(x) -> c
+Basic maffs
+

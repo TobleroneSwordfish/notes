@@ -1,0 +1,91 @@
+--Recursion schemes: fold--
+There is a guy down there with an actual fucking fidget spinner.
+
+Recursion dnagerus
+
+goto -> while -> for -> fold
+
+Fold takes a list and catastrophically works on it to produce a final value
+Technically they are called catamorphisms
+
+Catamorphsims but no polymorphisms, :(
+
+A fold can be demonstrated by sum
+
+1 : 2 : 3 : 4 : []
+  +   +   +   +  0
+
+Folds works right to left, at least this one (because there's always an exception) and reduces it by first modifying the
+empty list and then adding elements to the solution by transforming the cons
+We need to provide a way of dealing with [] and another for (:)
+
+Usually we have k :: b for replacing empty
+and f :: (a -> b -> b)
+
+foldr :: (a -> b -> b) -> b -> [a] -> b
+foldr f k [] = k
+foldr f k (x:xs) = f x (foldr f k xs)
+
+Sum can be written without a foldr:
+
+sum :: [Int] -> Int
+sum [] = 0
+sum (x:xs) = x + sum xs
+
+Using fold:
+
+sum :: [Int] -> Int
+sum xs = foldr (+) 0 xs
+
+equivalent to:
+
+sum :: [Int] -> Int
+sum = foldr (+) 0
+
+So it starts from the right and then just doesn't, nice
+
+Example:
+
+sum [3, 1, 4]
+= {def sum}
+foldr (+) 0 [3,1,4] --skipping syntactic sugar to convert [3,1,4] to 3:1:4:[]
+= {syntactic sugar}
+foldr (+) 0 (3:1:4:[])
+= def {foldr}
+(+) 3 (foldr (+) 0 (1:4:[]))
+= def {foldr}
+(+) 3 ((+) 1 (foldr (+) 0 (4:[])))
+= def {foldr}
+(+) 3 ((+) 1 ((+) 4 (foldr (+) 0 [])))
+= def {foldr}
+(+) 3 ((+) 1 ((+) 4 0))
+= {def (+)}
+(+) 3 ((+) 1 4)
+etc
+8
+
+This guy is great.
+Mind blown!
+Also learn to not say things, useful talent.
+I wonder if that is the no way guy
+
+no further question m'lud
+
+foldr is a general scheme and can be used to define many other functions:
+
+product [1,2,3,4] = product 1:2:3:4:[] --duh
+1 * 2 * 3 * 4 * 1
+
+to define using fold:
+
+product :: [Int] -> Int
+product = foldr (*) 1
+
+Another example is length:
+
+length [True, True, False]
+= length (True:True:False:[])
+
+
+length :: [a] -> Int
+length = (+1) 0

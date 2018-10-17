@@ -1,0 +1,70 @@
+Oh great more complicated trees
+
+Map, which is completely different to map or fmap. FANTASTIC.
+
+Maps hold keys and their values.
+
+I will win the elbow war by being far more skinny
+
+Maps are black boxed, we don't care how they work, thank Vanu
+Maps are an abstract data type, we do not have access to the internal structure.
+We can think of a Map as a function of the type:
+
+k -> Maybe v
+
+we give it a key, and we get a value back if possible
+
+Maybe is basically like a pointer, can point to an object or can just be a NULL
+//the word pointer brings out a certain panic
+
+Returns the empty map
+empty :: Map k v
+
+Extract from a map
+lookup :: Ord k => k -> Map k v -> Maybe v
+
+lookup k empty = Nothing for all k
+
+YAAAS ACCESS MODIFIERS YAAAAAS
+
+YAAAS OOP YAAAS
+
+Insert values into map
+insert :: Ord k => k -> v -> Map k v -> Map k v
+
+We expect that the following holds:
+lookup k (insert k v m) = Just v
+
+This tells us that if we insert at key that already holds a value, it will overwrite.
+Of course it doesn't actually change the map as mutation doesn't exist in haskell
+
+
+---TRIES---
+
+Trie is very effecient for mapping keys that can be decomposed into lists
+
+A Trie for names:
+Trie Char Int
+^Type of edges and nodes
+
+		0
+	    'A'/\'N'
+	      0  0
+	  'n'/    \'i'
+	    0	   0
+	'n'/	    \'c'
+	  23	     43
+      'e'/	  'k'/
+	17	    14
+
+We can implement a Trie using a map
+
+Trie k v = Trie (Maybe v) (Map k (Trie k v))
+
+Tries are like maps where k is a list instead of a value
+
+We can think of a "Trie k v" as being a "Map [k] v"
+
+A trie can be empty:
+empty :: Trie k v
+empty = Trie Nothing Map.empty --specifying that the empty comes from Data.Map

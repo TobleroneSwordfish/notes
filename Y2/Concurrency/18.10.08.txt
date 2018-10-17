@@ -1,0 +1,47 @@
+POINTERS
+AGH
+Students mate
+This seems bad, since Confucius or Aristotle could eat
+
+Asynch channels generally not as efficient
+
+Soft channel inside same core, hard between different cores
+Weeaboos in my C
+/i'm gonna have lots of fun saying chan while we code
+Channel does not specify type
+Yeah, cause we're using a language with no generics
+AND NO POINTERS AGH
+
+--------------------------------sendreceive.xc for channels
+
+Streaming = asynch channel
+
+Shit in = shit out
+Or fuck
+
+/FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUCK
+/i question how some of these names were allowed
+/it sounds like it was written by a kinky weeabo
+
+Oh gods these variable names
+GOTTA SAVE THAT SOURCE FILESIZE
+
+Transactions are just formal channels
+
+tile[0] waits for c2 while tile[1] waits for c1
+
+I hate not being able to speak
+
+/ngl am a bit lost :/
+I think actually writing it will help
+/i missed some stuff at the start so i'm kinda just AAAAAAAAAA
+/i'll go through the slides later and figure it out
+I'll say it's not as bad as it looks, but I'm not too sure
+/may i grab 2 markers pls
+gib marker
+/GIIIIIIIIIIIIIB
+Spread the pestillence
+/students panic for random time
+Actually makes sense, like the wifi collision system
+/are we really students?
+doubt it

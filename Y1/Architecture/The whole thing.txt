@@ -1,0 +1,62 @@
+Latch
+Logic
+Shift
+Arith
+Mux
+Demux
+RAM
+
+Timing generates:
+Fetch - fetch instruction from RAM
+Inc - increment PC
+Exec - decode and execute instruction
+
+Each timing phase has a two phase clock inside it
+
+Data contains RAM, registers, PC, Arith
+Sends signal back to control based on state of register
+
+Memory:
+
+Arrays
+Stack
+Program
+Consts
+Globals
+
+Stack pointer is global, points to local variable in stack
+We use stack allocation for locals to reduce memory footprint (not allocating memory for all local variables at once)
+and to allow for recursion (multiple copies of the same local variable)
+
+Process for calling function:
+
+Load return addr
+BR F --branch to function pointer
+
+F:
+extend stack
+store return addr
+...
+load return addr
+contract stack
+return
+
+GC (naive):
+
+Mark all items that must be kept
+Create array of new locations
+Move pointers in heap to new locations
+Compress heap down
+
+When marking, must also mark anything pointed to by marked objects
+Need method to determine whether arbitrary numbers are pointers or just numbers
+
+
+Compiler bootstrapping:
+Ea(Sb) = Eb
+Then
+Eb(Sb) = Eb
+So Ea, and therefor a in general are no longer required
+
+Also fuck EA
+-650k karma bois

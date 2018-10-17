@@ -1,0 +1,45 @@
+XC language
+/sad ^
+More C, eehhhh
+XMOS use XC, if you really want to spend summer attacking C
+Oh gods no, if she likes it I'm worried
+/i think he was being sarcastic
+True, excitement N/A
+/XD
+/CAT MEMES
+/also cheese
+where is this cheese located?
+/on greg's nipples
+
+Semaphores
+Oh gods, this is the lowest level version of C# asynch
+It looks awful
+Ful of awe - aweful
+
+Producer-consumer problem - producer sticks stuff in a buffer, consumer takes stuff out.
+When buffer is full lock producer thread, when empty lock consumer thread.
+
+Concurrency is logically simultaneous.
+Parallelism is physically simultaneous.
+
+Concurrency can be done on one core with time slicing (switching tasks constantly)
+Paralellism is when two operations are actually running simultaneously as opposed to alternating.
+
+Ke rning
+
+Deadlock - all threads waiting on each other
+Race conditions - weirdness
+
+Dangit, I know the other one
+
+XMOS seem to turn up everywhere
+No-one wants to learn C? I wonder why...
+
+/i'm confused abpout the image thing cause like if each section finishes on the pixel before the next one begins on then why do you lose information???
+Because the operation they were running needed the adjacent pixels
+
+Looking over someone's shoulder complaining about their code sounds good to me
+/i feel like for us to both get a good amount of knowledge out of this, i should be the one on the computer most of the time and then when i get stuck you prod me (so like constantly)
+You assume I have any idea how this works
+/you forget that i can barely do c (okay tbf i'm not THAT bad)
+/but also like you're much better at googling

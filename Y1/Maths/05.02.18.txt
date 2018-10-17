@@ -1,0 +1,17 @@
+﻿Equivalences
+knurd
+He really is
+If he is, then he's a functioning alchoholic
+Because he's always like this
+
+[2] = {x | x ≡ 2 (mod 8)}
+
+[2] = [-6] = [10]
+
+[5] . [6] = [30]
+
+Equivalence class of 2 = equivalence class of -6 etc
+All mod 8
+
+Logical congruence
+

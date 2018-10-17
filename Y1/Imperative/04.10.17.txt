@@ -1,0 +1,4 @@
+I feel like we just did this lecture. But I didn't pay any attention to the first one, so who knows
+Don't include platform specific libraries, ie <windows.h>
+POSIX is cross platform, extension of useful things
+double is 8 bytes, range of ~ +-10^+-308

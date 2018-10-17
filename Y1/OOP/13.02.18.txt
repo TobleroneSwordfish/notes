@@ -1,0 +1,27 @@
+Ahhh OOP
+Time for sleep
+
+Twat
+Twot
+
+He keeps talking about other programmers
+Mostly you're doing this to defend against your own stupitity
+Did I just put a d there
+Fuck I need sleep
+STOOPIDIDY
+
+No janky ass "friend" modifier, I like
+Friend?
+Don't exactly remember, some feature of the weirder OOP languages
+Some way of coupling classes with access modifiers
+Mostly just leads to awful code
+
+Twoot
+Twit
+Tweeoot
+Tweetle
+Twittle
+Twyllang
+Twecearing egg
+
+Static is not bound to an instance, can't access any attributes, because they are bound to the instance

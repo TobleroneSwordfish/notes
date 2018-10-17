@@ -1,0 +1,82 @@
+﻿1.1.2)
+1)
+data Robot = Forward Int Robot
+	| Left Robot
+	| Right Robot
+	| Stop
+
+distTrav :: Robot -> Int
+distTrav Forward dist robot = dist + (distTrav robot)
+distTrav Left robot = distTrav robot
+distTrav Right robot = distTrav robot
+distTrav Stop = 0
+
+distDir :: Robot -> Int
+distDir robot = distDirection robot 0
+
+distDirection :: Robot -> Int -> Int
+distDirection (Forward dist robot) 0 = dist + distDirection robot 0
+distDirection (Forward dist robot) x = 0
+distDirection Left robot x = distDirection robot ((x - 1) mod 4)
+distDirection Right robot x = distDirection robot ((x + 1) mod 4)
+distDirection Stop = 0
+
+OR
+
+data Dir = N | S | E | W
+
+distDirection :: Robot -> Dir -> Int
+distDirection (Forward dist robot) N = dist + distDirection robot 0
+distDirection (Forward dist robot) x = 0
+distDirection Left robot N = distDirection robot W
+distDirection Left robot W = distDirection robot S
+distDirection Left robot S = distDirection robot E
+distDirection Left robot E = distDirection robot N
+distDirection Right robot W = distDirection robot N
+distDirection Right robot S = distDirection robot W
+distDirection Right robot E = distDirection robot S
+distDirection Right robot N = distDirection robot E
+distDirection Stop = 0
+
+but fuck that shit
+
+
+distRel :: Robot -> Float
+distRel robot = distRelative robot (0,0) 0
+
+distRelative :: Robot -> (Int, Int) -> Int -> Float
+distRelative Forward dist robot (x, y) 0 = distRelative robot (x + dist, y) 0
+distRelative Forward dist robot (x, y) 1 = distRelative robot (x, y - dist) 1
+distRelative Forward dist robot (x, y) 2 = distRelative robot (x - dist, y) 2
+distRelative Forward dist robot (x, y) 3 = distRelative robot (x, y + dist) 3
+distRelative Left robot (x,y) i = distDirection robot ((i - 1) mod 4)
+distRelative Right robot (x,y) i = distDirection robot ((i + 1) mod 4)
+distRelative Stop = sqrt(x * x + y * y)
+
+distRel :: Robot -> Float
+distRel r = sqrt x * x + y * y
+	where
+		x = (distDir 0) - (distDir 2)
+		y = (distDir 1) - (distDir 4)
+
+Sooooo much better
+
+type Potato = (Int, Int, Bool, String)
+potato :: Potato
+potato = (0, 3, False, "potato")
+
+peel :: Potato -> Potato
+peel (time, weight, cooked, description) = (time + 2, weight, cooked, description ++ "peeled ")
+
+roast :: Potato -> Potato
+roast (time, weight, cooked, description) = (time + 70, weight, True, description ++ "roasted ")
+
+boilem :: Potato -> Potato
+boilem (time, weight, cooked, description) = (time + 25, weight, True, description ++ "boiled ")
+
+mashem :: Potato -> Potato
+mashem (time, weight, cooked, description) = (time + 1, weight, True, description ++ "boiled ")
+
+mix :: (Int,Int, Bool, String) → (Int,Int, Bool, String) → (Int,Int, Bool, String)
+mix (time, weight, cooked, description) (time1, weight1, cooked1, description1) = (time + time1, weight + weight1, cooked && cooked1, description ++ " " ++ description1
+

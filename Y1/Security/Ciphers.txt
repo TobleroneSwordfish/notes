@@ -1,0 +1,44 @@
+bristol university is ranked among the top five in the uk for research excellence.
+a = f
+b
+c = d
+d
+e = b
+f = l
+g = m
+h = e
+i = n
+j = o
+k
+l
+m = a
+n = g
+o = r
+p = s
+q = t
+r = c
+s = u
+t = h
+u = v
+v = w
+w = x
+x = y
+y
+z = i
+
+The university of bristol was founded in eighteen seventy-six as university college bristol and gained a royal charter in nineteen hundred and nine.
+rom its first day as a college it admitted both women and men, the first university in the country to do so - though they were first not allowed to gain degrees in medicine.
+
+Task 1
+DCQIZSOUWZTWURBLUR
+BRIDGEBRIDGEBRIDGE
+CLIFTONDOWNSTATION
+
+
+
+Bristol
+010000 100111 001001 101001 | 011100 110111 010001 101111 | 011011 000000 000000 000000
+QnJpc3IvbA==
+
+01100011 01101111 01100011 01101111 01101110 01110101 01110100 0000
+coconut

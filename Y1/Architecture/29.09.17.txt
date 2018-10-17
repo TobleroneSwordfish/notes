@@ -1,0 +1,13 @@
+So our teacher is either a weeb or a pirate.
+Requirements can be constructive or restrictive - must include x, must cost less than y.
+
+design metric: quantifiable criteria used to evaluate a solution
+design space: the set of all viable solutions
+design trade off: compromise favouring certain metrics
+
+Moral 3: you can shoehorn anything into an analogy about bridges
+
+understand, asses, implement, iterate
+
+That's my style, big horrible hacks everywhere!
+If you shove it in a function you don't have to look at it.

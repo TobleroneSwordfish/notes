@@ -1,0 +1,29 @@
+Codio has one unit set up, not essential like functional, submit coursework on SAFE.
+
+csijh.gitlab.io/COMS10008 - lecture notes, coursework, asides
+
+wwwa.fen.bris.ac.uk/COMS10008 - SAFE link for submissions
+
+Ian username is csijh - can get calender
+
+Don't bother emailing, turn up at office before 4PM.
+
+This guy's throat makes me want to cough.
+
+Ian and Nic both understand each others units - can help.
+
+
+C
+
+Lowest level before assembly starts to make things architecture dependent.
+
+Imperative tells processor exactly how, functional tells what needs to be done.
+
+Coder -> Programmer -> Developer
+
+Function can technically only process input to return result, procedures can perform other tasks - print to screen, send data etc.
+
+compile command syntax with GNU: gcc -std=c99 -Wall hello.c -o hello
+c 1999 version, turn on all warnings, filename "hello.c", output to program "hello"
+./hello to run from current directory
+see aside on make for further compiler info

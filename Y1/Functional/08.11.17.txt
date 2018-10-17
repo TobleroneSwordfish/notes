@@ -1,0 +1,88 @@
+pokeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+Mostly all we've done is trees
+Probably, it's just binary trees if you've done them
+nope
+is fractals based on that?
+Ye, a lot
+no point conibg to the lab then
+You could try to figure it out, mostly by poking us
+Crickey
+Blimey!
+Shock
+Very british
+Poking will prevent nap
+Oh, and in the fractals code he calls a bush a tree and it messed me up for half a bloody hour
+Fractals
+I always wonder if the Haskell interpreter is written in Haskell, seems appropriate
+our tutor was like 'you're never going to use haskell after this year unless you for whatever reason want to do a project with nick'
+Plz no
+ikr
+SHit reef knot
+tug
+This is like bopit now
+I always hated those 12 thing bopit machines
+BAPIT!
+TWIST IT!
+POOL IT!
+That's all there is, pretty much
+Everyone's worried about haskell
+
+toBush :: Ord a -> [a] -> Bush a
+toBush = foldr f k where
+	--f :: a -> Bush a -> Bush a
+	f = insert
+	k = Tip
+yeaaaah reading week will be like 30% this, 15% arcitecture 15% maths, 10% imperative, 5% security, 10% sleep, 15% fun
+
+10% luck, 20% skill and 15% concentrated power of will
+5% pleasure 50% pain, 100% reason to remember the name
+
+elemBush :: Ord a => Bush a -> Bool
+elemBush x Tip = False
+elemBush x (Node l y r)
+	| x < y = elemBush x l
+	| x == y = True
+	| x > y = elemBush x r
+
+That moment happens so often in vidya gamez or otherwise
+I feel like you hurt this guy once
+i kinda did.... we're good friends now tho
+it's not my fault he gets a crush on every other female he sees
+Only every other?
+yeah it'd be overkill otherwise
+
+if bush is fully balanced then complexity is O(log2 n)
+also the dm was my bf for a while and one of the other players complained that i get less hits from bad guys and that's favorable
+treatment. i was a ranger. i fought with a fucking bow, from the back of the field.
+To be fair, much of my experience of playing ranger in other games is being jumped on by every goddamn rogue
+....fair
+
+There is a lot of fairness here
+it was a ridiculous campaign
+on the bright side, two of the players (who didn't know each other before) became a couple during it
+on the dark side, it's a rather disfunctional relationship
+
+SO AM I
+I KNOW
+PERFECTLY LOGICAL
+
+some days my bed seems really comfy
+some others i wake up and my back hurts and i can't find a good position
+idek anymore
+The beds aren't great
+Too short too
+Had a double bed at home, slept diagonally across it
+i had sth between a double and single, but more importantly a comfy matress
+Found some memory foam in a warehouse once, big improvement
+
+Note to my future self trying to actually read this mess, I'm not sorry, screw you.
+(i'm sorry on behalf of both of us, please don't find me and punch me when you try to revise)
+I'll send the punch over facebook
+or via encrypted email
+do you know where we'll get the grades for security? email? safe? blackboard? pigeon? Safe I think, don't know the link tho
+we'll probs get an email
+i figured it SHOULD be fairly okay to get a 25/30, fair?
+so if you get 25 in both assignments you have 50 + whatever you get in a multiple choice exam
+how hard can it be to get an 80?
+A multiple choice on higher dimensional vector space? Uhhh, yeeeah
+fucks sake jonny

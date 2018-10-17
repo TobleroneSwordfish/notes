@@ -1,0 +1,39 @@
+void * is a generic pointer
+MALLOC
+
+BLOOD AND MALLOC
+//you're weird and i feel like it's my fault
+Oh no, you are far too late.
+Been weird for years
+
+MY BLOOD IS MALLOC
+
+MALLOC IS LIFE, MALLOC IS THE UNIVERSE, MALLOC IS THE CAUSE OF MOST MEMORY LEAKS, BUT DON'T WORRY ABOUT THAT.
+//will you help me with m alloc when i inevitably fuck up?
+Sure, it's not actually that bad.
+See the second bit? DON'T WORRY ABOUT IT.
+
+A SPIRIT, REANIMATED BY MALLOC.
+//next tieme i write fantasy, a cool bad guy or god will be named malloc AND IT'S YOUR FAULT
+I think a few c function names would make good gods.
+
+The great god Ferror, slain by Eof, son of Fflush.
+//ferror sounds too much like terror
+
+AND SO ENDS THE GREAT SAGA OF BLOOD AND MALLOC
+
+EOF
+//atoi
+
+I feel like that would be a good city name
+//yeah
+//so if you do char* s = malloc (4) ; you make the pointer point to the beggining of four empty spaces? and tghen how can you allocate things to those spaces?
+Use the pointer like an array, so s[i] = 'h'
+Or pointer arithmetic, but just don't
+//okaY
+Also, as he just said, malloc takes bytes not number of things
+
+BROTHER OF THE GREAT MALLOC, THE DARK GOD CALLOC INITIALIZES ALL TO BE 0, ALL IS NOTHING BEFORE CALLOC
+//mate you're literally putting my brain in epic fantasy mode
+
+Increasing length arrays done using realloc and multiplying the size, rather than adding.

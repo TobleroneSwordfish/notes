@@ -1,0 +1,60 @@
+Hours of sleep: 0
+Fuck
+Why
+HASKELL
+AGH
+Is this what it's like to be stoopid?
+Cat.
+Three of us have turned up, damn you smart people staying in bed.
+Setting something to Nothing is essentially deletion.
+*Your brain on Haskell*
+
+delete :: [k] -> Trie k v -> Trie k v
+delete ks t = update ks (const Nothing) t
+
+even' :: Int -> Bool
+even' n = case n of
+	0 -> True
+	n' -> not (even' n')
+
+case used for pattern matching on right hand side of equals sign, pattern guards for left
+
+Say Trie like it's french.
+
+To create a new Trie from a list of keys and values
+
+makeTrie :: [String] -> Trie Char Int
+makeTrie xs = foldr f k xs
+	where
+		k :: Trie Char Int
+		k = empty
+		f :: String -> Trie Char Int -> Trie Char Int
+		f w t = adjust w incr t
+This uses two functions, adjust and incr
+
+incr :: Maybe Int -> Maybe Int
+incr Nothing = Just 1
+incr (Just n) = Just (n + 1)
+
+Adjust will apply incr so that when the node is empty ie Nothing then we have Just 1,
+otherwise we get back a value and increment it.
+
+No definition for adjust atm, feelsbad
+
+Make function that takes a file and tells you how many of each word it contains
+
+main :: IO
+
+defines an entry point just liek an imperative language
+
+do lets you run multiple instructions after each other
+
+Mostly begat
+
+pretty sure I have RSI from typing now, that's what 20 hours of JSON does for you
+
+"I know I'm right"
+
+import Prelude hiding (lookup)
+
+hides the Prelude version of lookup, so we can use the Trie version or whatnot

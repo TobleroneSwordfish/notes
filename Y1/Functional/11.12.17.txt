@@ -1,0 +1,75 @@
+--EFFICIENCY
+
+What do we mean by efficiency of code?
+
+Consider the operation (++)
+
+(++) :: [a] -> [a] -> [a]
+[] ++ ys = ys
+(x:xs) ++ ys = x:(xs ++ ys)
+
+The running time of this is O(n), where n is the numebr of elements in xs, when we do xs ++ ys
+You can determine this by counting the number of pattern matches it will take
+
+reverse :: [a] -> [a]
+reverse [] = []
+reverse (x:xs) = (reverse xs) ++ [x]
+
+Looking at this, given reverse xs where xs has length n,
+we know the patern match in the second case will take O(n) steps and recurse with reverse on a list of size n-1.
+Counting the total steps we have 1 + 2 + ... + n = n(n + 1)/2 = (roughly) O(n^2)
+
+A better version must avoid (++), as it is repeating work.
+
+--- ACCUMULATING PARAMETERS
+An accumulating parameter is a parameter to a recursive function that represents an intermmediate input that will become the output in the final call
+For reverse we will accumulate the reversed list
+
+reverse :: [a] -> [a]
+reverse xs = reverse' xs []
+where
+	reverse' :: [a] -> [a] -> [a]
+	reverse' [] ys = ys
+	reverse' (x:xs) ys = reverse' xs (x:ys) --x ends up at the bottom of the list, after all of xs
+
+In this case, we count the number of pattern matches on an input xs of size n, we see that there are O(n) steps
+
+--DIFFERENCE LIST
+
+A difference list (or sometimes called a Cayley representation of a list) is a representation of lists that makes ++ cost O(1) rather than O(n)
+The reason ++ is expensive on repeated calls is that the left hand argument must be processed in its entirety to replace [] with ys
+Which is pointless
+A difference list does not have a [] as its last element, rather it has a parameter waiting to be instantiated
+
+A difference list is of type:
+[a] -> [a] which roughly represents [a]
+
+In other words we represent a list as a function from lists to lists
+The empty list is represented by a function:
+
+\xs -> xs
+
+This is the identity list
+
+To represent the list with one value we do this:
+
+\xs -> x:xs
+
+A list with multiple elements becomes a chain of functions:
+
+(\xs -> 1:xs) . (\ys -> 2:ys) . (\zs -> 3:zs)
+
+What happens when we apply this function to []?
+
+Let's calculate:
+
+((\xs -> 1:xs) . (\ys -> 2:ys) . (\zs -> 3:zs)) []
+= {(.)}
+(\xs -> 1:xs) ((\ys -> 2:ys) ((\zs -> 3:zs) []))
+= {applying function}
+(\xs -> 1:xs) ((\ys -> 2:ys) (3:[]))
+= {applying function}
+(\xs -> 1:xs) (2 : (3 : []))
+= {applying function}
+1 : (2 : (3 : []))
+

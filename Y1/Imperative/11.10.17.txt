@@ -1,0 +1,27 @@
+That £ sign being on the wrong side of the 10 is...... GRR
+Any non-ASCII characters count as 2 characters for length etc
+Never use wide characters, archaic bullshit
+Upon iterating, the character will count as 2, however will not match any ASCII character
+Anything built into the C language, operators etc take 1 or 2 processor instructions, functions take more
+size_t is a long on systems with more than 4gb RAM, int with less
+%ld is long in printf, but generally just cast or coerce to an int
+(int)x is cast
+int y = x is coerce
+== on strings compares pointers, because it must take only one processor instruction rather than a loop as in strcmp
+strcpy(to, from)
+cannot set string directly, x = y does not work
+strcat(to, from), sticks from to the end of to
+
+sprintf(s,...) works like printf, only prints into the string rather than the console
+sprintf(s, "text is&d", i)
+
+snprintf(<string to print to>, <character limit>, ...)
+snprintf(NULL, 0, ...) returns the number of characters in ...
+
+C really is just a series of horrible hacks...
+
+Undefined behavior: not caught by compiler, running off end of array etc
+Unspecified behavior: accessing a non-initialized variable to get a random value
+Implementation-defined: UTF-8, stdout buffered, length of int and long, char is signed or not.
+Locale specific: human language, monetery system, timezones etc.
+

@@ -1,0 +1,34 @@
+I miss the pointy stick.
+Secure: physically safe, encrypted, cannot be accessed without authentication.
+CIA:
+confidentiality: reading restricted to certain users
+integrity: data can only be modified by certain users
+availability: people who should have access do.
+
+welcome to the glorious freedom of spam
+
+Identification: who is
+Authorisation: are they allowed
+Authentication: both
+
+Authenticate:
+have: ID card etc
+know: password
+are: biometrics
+
+Multi-factor is from diferent catagories, not just two passwords.
+
+Or a purple monkey. It's called bonzi buddy btw. Very old bit of malware, turns up everywhere old people use XP.
+
+Online: check against controlled database
+Offline: check a physical credential which can be forged
+
+I wonder if one of these lectures is just going to be XKCD eventually
+
+MD5 is shit.
+
+I like the choice of ravenclaw - the smartarses
+
+Don't keep changing password - pointless.
+
+haveibeenpwned.com

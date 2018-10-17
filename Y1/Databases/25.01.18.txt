@@ -1,0 +1,41 @@
+Omlette was mistake
+David strobing in and out of mic range isn't helping
+Ironic that David fangirl Theano is missing this unit
+Follow standard, well yes
+Semantic tags for bots mostly, to understand meaing of formatting
+
+mozilla docs good
+
+Don't use bold, itallic tags etc, use semantic tags and style in CSS
+
+Block tags are ordered across the page by browser, to fit screen size etc
+
+div for layout, not structure, don't use them everywhere in HTML5
+
+id is unique for styling, class can refere to multiple elements. also scripting
+
+What I'm hearing is that HTML5 is the shit
+
+Browser can interpret fucked up closing brackets etc, validator will tell you if it's actually correct
+
+Use label tags
+
+Whole degree course on HTML and CSS - aka suicide 101
+
+If you really need variables in CSS there are LESS etc languages that compile down to CSS
+Actual CSS variables may or may not work in certain browsers
+But have you tested the website in OPERA?! *dunn dunn duNNNN*
+
+Never use fixed pixel widths if you can help it, people will muder you in your sleep
+
+Aaaaand blackboard has done none of this and most of it still doesn't work on mobile
+
+Frameworks. Yes. Too many. Yes.
+
+Eggs always give me a headache
+I should stop eating eggs
+But eggs are nice
+wah.
+
+The internet has now convinced me that I'm mildly allergic to eggs
+Fuck

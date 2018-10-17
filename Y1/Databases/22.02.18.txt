@@ -1,0 +1,46 @@
+SELECT SUM(Candidate.votes) AS total
+FROM Candidate;
+
+SELECT SUM(Candidate.votes), (SUM(Candidate.votes) / Ward.electorate) * 100 AS percentage
+FROM Candidate
+INNER JOIN Ward ON Candidate.ward = Ward.id
+WHERE Ward.name = "Windmill Hill";
+
+
+SELECT Candidate.name, Party.name, (Candidate.votes / (
+
+SELECT SUM(Candidate.votes) AS total
+FROM Candidate
+INNER JOIN Ward ON Ward.id = Candidate.ward
+WHERE Ward.name = "Southville"
+
+)) * 100 AS percentage
+FROM Candidate
+INNER JOIN Ward ON Candidate.ward = Ward.id
+INNER JOIN Party ON Candidate.party = Party.id
+WHERE Ward.name = "Southville"
+ORDER BY percentage DESC;
+
+
+SELECT COUNT(Party.name) + 1 FROM Party
+INNER JOIN Candidate ON Candidate.party = Party.id
+INNER JOIN Ward ON Candidate.ward = Ward.id
+WHERE Ward.name = "Whitchurch Park" AND Candidate.votes > ALL (
+
+SELECT votes FROM Candidate
+INNER JOIN Ward ON Candidate.ward = Ward.id
+INNER JOIN Party ON Candidate.party = Party.id
+WHERE Party.name = "Labour" AND Ward.name = "Whitchurch Park"
+);
+
+SELECT SUM(data) FROM Statistic
+WHERE Statistic.wardId = 'E05001979' AND Statistic.occId = 2; <2508>
+
+SELECT SUM(data) FROM Statistic
+INNER JOIN Ward ON Statistic.wardId = Ward.code
+WHERE Ward.parent = 'E06000023' AND Statistic.occId = 6; <17934>
+
+SELECT Occupation.name, Statistic.data
+FROM (Statistic, Occupation)
+INNER JOIN Ward ON Statistic.wardId = Ward.code
+WHERE Ward.code = 'E05001979';

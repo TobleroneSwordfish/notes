@@ -1,0 +1,31 @@
+Matrix can be thought of as a vector of columns or a vector of rows
+
+Linear system can have a single solution, no solution, infinite solutions.
+
+3 variable linear system defines a plane
+
+When planes intersect at a line (1D subspace of R3), infinite solutions
+
+Have just recalled that we don't have lectures tomorrow, FUCK YEAH
+
+Am browsing r/surrealmemes. Makes more sense than this lecture.
+
+Gaussian Elimination used to solve nxn matrices
+
+x1 + 2x2 + x3= 2
+2x1 
+ah fuck it
+
+1 2 1 2
+2 2 3 1
+1 -2 4 3
+|
+V
+1 2 1 2
+0 -2 1 -3
+0 -4 3 1
+
+
+0 = 1
+
+

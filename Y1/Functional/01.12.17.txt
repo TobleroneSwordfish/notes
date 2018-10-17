@@ -1,0 +1,86 @@
+DEWIT
+Goddamnit Haskell, I've just been using <<= as a bitshift in c all day.
+Now it's a bind. And I'm in one. B'dum tsh Max.
+FIRE PHOTON TOPEDOES
+Sushi, mmm.
+Wp Nick, wp.
+I think the weirdest one was the bible. Teaches you how to live? Yeah, 2000 years ago. (Well actually more like 600 years ago by some crazy monks, but you get the point)
+//tbf christianity has fairly good ethics, but mate.
+Eye for an eye and death to aldulterers? Sure.
+//it has a lot of conflicting stuff. like it does have eye for an eye but it also has the thing about turning the other cheek
+See earlier point about crazy monks
+
+Why do we need cons? Is useful
+
+Suppose we have the functions (+1) and (*2)
+We can turn them into functions of the type Int -> m Int:
+
+(+1) :: Int -> Int
+return . (+1) :: Int -> m Int
+
+Example for ID monad:
+
+prog :: Id Int
+prog = return 3 >>= return . (+1) >>= return . (*2)
+
+Calculate the value:
+return 3 >>= return . (+1) >>= return . (*2)
+= {def return}
+Id 3 >>= return . (+1) >>= return . (*2)
+= {def >>=}
+(return . (+1)) 3 >>= return . (*2)
+//Stop using def here for lazyness
+= {(.)}
+return ((+1) 3) >>= return . (*2)
+= {(+1)}
+return 4 >>= return . (*2)
+= {return}
+Id 4 >>= return . (*2)
+= {>>=}
+(return . (*2)) 4
+= {(.)}
+return ((*2) 4)
+= {(*2)}
+return 8
+= {return}
+Id 8
+
+This code is shite
+
+An alternative is do notation:
+In do notation this is simply
+
+prog = do
+	x <- return 3
+	y <- (return . (+1)) x
+	z <- (return . (*2)) y
+	return z
+
+The translation works by naming the results of computations as appropriate:
+
+return 3 >>= return . (+1) >>= return (*2)
+
+Whenever we have a function we can write:
+f= \x -> f x
+
+So we can write the above as:
+return 3 >>= (\x -> (return . (+1)) x) >>= (\y -> (return . (*2)) y) >>= (\z -> return z)
+
+x, y and z have type Int
+
+
+MAYBE MONAD
+Captures the idea of computability that can fail.
+We can think of fail as a function/value
+
+class Monad m => MonadFail m where
+	fail :: m a
+
+This says that to define a class called MonadFail for a type m, then m must first be an instance of Monad.
+Also there must be an operation called fail.
+
+This satisfies the following law:
+fail >>= f = fail
+called the bind-fail law
+
+An example of a MonadFail is the Maybe type

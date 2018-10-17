@@ -1,0 +1,67 @@
+Giving people time to think is a bad idea, that's how existential crises start
+Gonna be building so much on haskell
+//ikr
+//he's so nice (and cute)
+Now I'm interested
+//a friend sometimes naps in my place but he's also a bit of an ass lately so earlier he asked me 'when do you finish with uni today?' and i said '4'
+//and he said 'okay i'll come by at 4' (he hadn't asked me earlier or anything and i'm annoyed)
+Is he homeless?
+//his residence is far
+Allsorts are the results of a liquorice maker getting really drunk and deciding that coconut was a good idea
+And lemon
+Just write it in java and run it on a potato, it'll eat the entire potato in order to run, but it will run
+"JVM was a good idea" - no-one ever
+Oh gods we're doing java next year
+Just port it to java
+LITERALLY ALL OF IT
+
+Opcodes vs operands, yeah yeah
+is functions and args
+
+this guys has emojis on his slides
+r/fellowkids
+
+Almost set my room on fire with a soldering iron
+Used to buy circuits from maplins, like 3 quid for a clock or a thing that does things
+
+Instructions are abstracted control signals
+
+Should be 'A', goddamn one length strings
+
+As instructions are symbols they have to be decoded
+
+Fetch -> decode -> execute
+
+Instruction loads into decoder, spits out control signals, loads data into register, run thing, stick output back in memory
+
+Seemples
+How can you write that squeek?
+
+There was a poll a while back, and the irish accent was voted most sexually attractive.
+That's a great little pointless fact
+
+n bits gives a 2^n instruction set
+duh
+
+Not all bit strings are valid instructions because you probably don't have exactly 64, 128 instructions
+
+Z?! KILLITWITHFIRE
+//best dialogue: "WHAT IS Z?" "YES"
+
+op-code is a subset of the bit patterns
+
+Instruction is composed of op-code and operands, control flags etc.
+
+"Not exactly true" understatement
+
+ARM used in low power environments, phones, pi's etc.
+MIPS is nerds - microprocessor
+Intel x86 is Intel's godawful mess - like windows, a monopoly of shit
+"Competition improves standards" pah
+The other one was probably just nerd shit too
+
+How do you get numbers in registers to do those instructions on?!
+
+Combinatorial logic is shit, because it breaks if you change anything - bespoke
+DMUX, less efficient in terms of transistors, better design wise
+Lookup

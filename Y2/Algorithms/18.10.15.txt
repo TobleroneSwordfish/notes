@@ -1,0 +1,52 @@
+﻿It's mildly worrying how well I appear to be functioning on 2 hours sleep
+Maybe this is my natural state
+Or maybe it's like being drunk and I think I'm fine but everyone else thinks I'm being a dick
+
+Nice tree
+
+grep > DNA research?
+Seems legit
+
+I was really hoping she wouldn't credit it
+
+No-one read it the first time round
+
+Buddha am I drunk?y
+the buddha has spoken
+y
+!
+
+Three different string matching algorithms
+KMP
+BMH
+FSM
+
+naive is just match each character until mismatch
+is garbage
+
+KMP uses the naive algorithm but when a mismatch occurs at q+1 we know we have found q characters that match
+Eliminates pointless shifts that you already know would mismatch
+Only uses information about matches, not mismatches
+Imma go with wikipedia cause this seems pretty dumb
+buddha: y
+The algorithms drive her mad
+C O N T R A S T
+
+Oh gods she left AF on again
+
+Prefix table value = Longest possible string that is prefix and suffix and is not the string itself
+
+Ruari doing inclusive or but she's so distracted by the beauty of the algorithms she just carried on
+
+Shift the query string by the value given in the prefix table
+
+KMP is O(n) and θ(n)
+
+Better when alphabet is small
+
+BMH works R-L
+oof
+Works by looking at text instead of pattern
+
+On mismatch that doesn't occur anywhere, skip right past it
+If the mismatch is in the pattern, shift to line it up with the occurence in the pattern

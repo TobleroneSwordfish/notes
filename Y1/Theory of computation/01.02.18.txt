@@ -1,0 +1,37 @@
+
+axcvbnm,./;lkjhgfds
+1234567890000000000000poiuytrewqaaaaaaaaaaasdfghjklllllkmnbvcxz
+Yarp
+narp
+Also more hills
+And remembering to leave 5 minutes earlier
+
+Okay, so you DFA, right?
+state->state->state
+
+NFA is an NFA that goes state->{state->{state}, state} etc
+
+So when the one on the board is in state q1, it reads a 1 and is then in both q1 and q2
+So then if it reads a 0
+
+My mind can be in several states at once
+you is smart
+i is distracted
+
+Weeeaaaoooow, so we just made a higher level DFA
+Kewl
+
+So all you have to do is replace {1,2} with Sx etc
+Game say "go farm"?
+Break the game to win
+HEXEDIT
+EXPORT SAVES TO PC AND OPEN IN NOTEPAD
+NBTEXPLORER
+REPRESENT THE PROBLEM WITH AN NFA
+
+I... Actually think I understood that.
+
+Kiiiiinda
+It's the empty string, which seems to sort of be between each letter
+Like [] in Haskell
+Any list technically has []'s everywhere because it has no effect when you cons it

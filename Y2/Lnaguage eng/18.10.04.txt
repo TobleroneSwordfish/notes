@@ -1,0 +1,111 @@
+﻿Literally playing with the light switch
+
+What you're telling me is that a compiler is a function. Goddamnit Nick, why is everything a function?!
+
+A compiler is code that transforms
+
+RIP in rec
+Also RIP anyone listening to this on replay with headphones
+
+a source language to target language through some intermediate representation
+
+       	      eval
+    source ---------> target
+compile \              / exec
+          intermediate
+	      (IR)
+Source -> target is interpreted langs
+Source -> IR -> target is compiled
+Makes snese
+Wait, SNES
+
+Everything is a compiler, in addition to everything being a function
+
+Typical examples of this diagram include the c compiler gcc, which takes a c source file and compiles this to assembly.
+That assembly is then executed in the terminal.
+
+JS tends to ignore the compile stage since it is an interpreted lang. The browser performs eval, which turns JS into rendered output directly.
+ALthough you can compile JS.
+
+Because rules exist to be broken, and JS breaks most of them
+
+Haskell has two modes, when using GHC, it compiles .hs files into assembly which can then be executed in the terminal.
+However, when using GHCI, it takes source and interprets it directly by evaluating in the terminal.
+And again, this is mostly lies to children
+Everything is, eventually
+Humans can't comprehend the universe directly, so we lie to ourselves that it makes sense
+
+This sounds suspiciously like modsim
+
+----------------Case study: circuit language------------------
+
+[Read: "Folding DSLs by gibbons and wu"]
+
+The circuit language is a DSL for describing circuits
+it consists of several operations:
+
+- identity :: Int -> Circuit
+eg 
+> identity 3 = |||
+
+- beside :: Circuit -> Circuit -> Circuit
+> beside (|||) (||) = |||||
+
+Nooooo, diagrams in ASCII
+
+> beside (N) (|N) = N|N
+
+- above :: Circuit -> Circuit -> Circuit
+> above (N|) (|N) = |\| |
+		    | |\|
+This assumes that the width of the two circuits are equal.
+
+- fan :: Int -> Circuit
+> fan 4 = ||||
+Top of first line connected to bottom of all other lines
+Fuck non ascii bullshit
+> fan 6 = ||||||
+and same
+
+- stretch :: [Int] -> Circuit -> Circuit
+> stretch [1,2,3,2,2] N
+see mess on paper
+
+This language is used to describe how circuits work.
+Information starts at the top and flows downwards.
+
+Information is combined by joining lines and applying the operation (.)
+
+X0  X1
+ \  |
+   ⬤
+   |
+   y
+
+y = X0 ⬤ X1
+
+x
+|
+⬤
+| \
+y0 y1
+
+x = y1 = y0
+
+-------Deep embedding-------------
+There are many ways of interpreting this language.
+eg.
+- Find width of circuit
+- Find height of circuit
+- Evaluate output of circuit given input and (⬤)
+
+We start with a deep embedding. This is achieved in two steps.
+
+- Create a data structure for the abstract syntax
+- Define the semantics with an eval function
+
+> data Circuit = Identity Int
+	| Beside Circuit Circuit
+	| Above Circuit Circuit
+	| Fan Int
+	| Stretch [Int] Circuit

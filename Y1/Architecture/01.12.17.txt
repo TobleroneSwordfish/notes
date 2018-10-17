@@ -1,0 +1,32 @@
+But Sherlock didn't
+?
+Link Register: stores address to jump back to after calling a subroutine
+I really want to know how you get a lemon like that
+Does hell follow cats?
+//IT'S ADORABLE
+Well yes, implicitly - is cat.
+//I THINK I ACTUALLY UNDERSTAND THIS LECTURE
+PROGRESSSSSS!
+//MALLOOOOOOOOOOOOOOC
+YEESSSSS, MAAAALLOC
+Oh great, we get explanation of stacks #374
+Also one I've heard 3 different people use
+\\pooooooooooooooke
+//even my \\ are tipsy
+"\\" is your drunk alter ego?
+\\you should see my high alter ego
+"||" ?!
+--
+But that is LUA
+BGJHAGJDgsafjsdjfk
+//see, it would be high, but i'm short so it's medium
+Oh, so you are short?
+//Oh, so you are tall?
+\\i just realised, if i become medium cause i'm short what do you become since you're tall?
+SPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACE
+So it's just a splayed hand? Seems far too generic
+
+Link register implemented as stack, for functions called inside other functions
+
+Shit nipple
+\\//

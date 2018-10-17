@@ -1,0 +1,40 @@
+typedef struct birb Birb
+
+Birb x = yadayada
+
+All I can smell is lasanga smoke, it was in there for 8 goddamn hours
+
+I wonder how many times you can just type "bird" in a row and have it compile
+
+Three chapters of you making that joke, oh boy...
+
+More word assosciation, pointer -> poke
+
+But if (->) -> poke does that mean that (->) -> (->)?
+
+Seems legit
+
+I blame you lot behind me, you're probably reading this because I would be.
+STAHP
+
+Would fit angsty teenager look
+
+Convention for pointers: int *p
+
+Incrementing a pointer adds the type width, not the raw memory.
+p+1 if p points to an int
+
+Adding one, english is pointless. Actually, I think it can mean adding more than one in some cases.
+
+So in for (int i = 0; i < n; i+= <something>) <something> is the increment and i is incremented
+
+&n means pointer to n
+
+null pointer in c is NULL, but of course in c++ it's nullptr
+
+Wear your glasses!
+
+Run out of snickers?
+
+Then they decided to make win8 and integrate CORTANA with the bloody OS
+Now it's not even good to use anymore

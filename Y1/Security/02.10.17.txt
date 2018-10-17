@@ -1,0 +1,12 @@
+Assume that the enemy knows your system.
+Security must rest solely on the assumption that no-one has your keys.
+System with n bits of security takes 2^n steps to break.
+DES uses 56 bits, AES uses 128-256
+bits of security, breaking the system by brute force takes 2^n operations.
+128 is minimum
+for EC system, key length is twice the bits of security
+average password is 20 bits, 40 is a very strong one.
+ergo passwords cannot be used for encryption
+techs are always the same, today it'd probably be an XKCD
+encryption should hide patterns
+key length != security level

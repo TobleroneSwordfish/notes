@@ -1,0 +1,101 @@
+Do you think Nick's internal narrator speaks in Haskell?
+What if haskell was bees
+fuck off nick
+that is the worst possible answer to that question
+
+it's right there nick
+RIGHT FUCKING THERE
+I CAN SEEE IT
+
+I like that student
+
+Some examples of values of type Fix (ListF a) are:
+
+> In EmptyF 
+      |
+{ListF a (Fix (ListF a))}
+
+This works because EmptyF :: ListF a k for any a or k even that mess above
+
+Note that the type of In is:
+> In :: f(Fix f) -> Fix f
+
+So the example above si where f = ListF a
+
+> In (ConsF 5 (In EmptyF))
+	     |      |
+	     |{Fix(ListF a)}
+      {Fix(ListF a)}
+
+for two elements:
+> In (ConsF 6 (In (ConsF 7 (In EmptyF))))
+
+So now we have enough to finish a definition of fromList:
+
+> fromList :: List a -> Fix (ListF a)
+> fromList Empty = In EmptyF
+> fromList (Cons x xs) = In (ConsF x (fromList xs))
+
+catacatacatacatacatacatacatacatacatacatacatacatacatacata
+
+We are now ready to generalise fold to be a catamorphism
+
+Consider functions of type ListF a b -> b
+
+h :: ListF a b -> b
+h EmptyF = k
+h (ConsF a y) = f a y
+where
+	k :: b
+	f :: a -> b -> b
+
+Functions of that type correspond to replacing the constructors of ListF a with functions k and f just like in foldr
+
+A catamorphism arises from this diagram:
+             fmap(cata alg) 
+      f (Fix f)---------->f b
+	In| ^              |alg
+          V |inop          V
+	Fix f -----------> b
+               cata alg
+inop is opposite of In
+> inop :: Fix f -> f (Fix f)
+> inop (In x) = x
+
+where x has type f(Fix f)
+
+So finally we can write cata by chasing the arrows around this square
+
+> cata :: Functor f => (f b -> b) -> Fix f -> b
+> cata alg x = (alg . fmap (cata alg) . inop) x
+
+An alternative and equivalent definition:
+> cata :: Functor f => (f b -> b) -> Fix f -> b
+> cata alg (In x) = alg (fmap (cata alg) x)
+
+To use this we only need to supply the alg
+kills
+
+We will define the function toList using a cata
+
+> toList :: Fix (ListF a) -> List a
+> toList = cata alg
+> where
+> 	alg :: ListF a (List a) -> List a
+> 	alg EmptyF = Empty
+> 	alg (ConsF x xs) = Cons x xs
+
+Did... DId we just redefine list using list?!
+WHAT THE FUCK, WHY, WHAT'S THE FUCKING POINT?!
+AADGJSAFSLDO;PV'LO:kOKSFLDSsdf
+
+Here is another function:
+
+> toList' :: Fux (ListF a) -> [a]
+> toList' = cata alg
+> where
+> 	alg :: ListF a [a] -> [a]
+> 	alg EmptyF = []
+> 	alg (ConsF x xs) = x:xs
+
+YES NICK, IT'S ALMOST LIKE IT'S LITERALLY JUST THE DEFINITION OF A LIST OVER AGAIN

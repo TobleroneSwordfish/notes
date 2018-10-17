@@ -1,0 +1,41 @@
+You don't need a join for that case
+You can just use a where
+select * from Lecturer, Unit where Lecturer.id == Unit.director and Unit.title == "Databases"
+
+SELECT votes FROM Candidate
+INNER JOIN Party ON Candidate.party = Party.id
+INNER JOIN Ward ON Candidate.ward = Ward.id
+WHERE Party.name = "Labour" AND Ward.name = "Stockwood";
+
+SELECT Candidate.name, Party.name, Candidate.votes FROM Candidate
+INNER JOIN Party ON Party.id = Candidate.party
+INNER JOIN Ward on Candidate.ward = Ward.id
+WHERE Ward.name = "Southville"
+ORDER BY votes DESC;
+
+SELECT Candidate.name, Party.name, Candidate.votes FROM Candidate
+INNER JOIN Party ON Party.id = Candidate.party
+INNER JOIN Ward on Candidate.ward = Ward.id
+WHERE Ward.name = "Knowle"
+WHERE Candidate.votes > ALL (
+SELECT votes FROM Candidate
+);
+
+SELECT Candidate.name, Party.name, Candidate.votes FROM Candidate
+INNER JOIN Party ON Party.id = Candidate.party
+INNER JOIN Ward on Candidate.ward = Ward.id
+WHERE Ward.name = 'Knowle'
+ORDER BY votes DESC
+LIMIT 1;
+
+SELECT County.name, County.code, Region.name, Region.code, Country.name, Country.code FROM County
+INNER JOIN Region ON Region.code = County.parent
+INNER JOIN Country ON Country.code = Region.parent
+INNER JOIN Ward ON County.code = Ward.parent
+WHERE Ward.name = "Cabot";
+
+SELECT data FROM Statistic
+WHERE wardID = 'E05001979' AND gender = 1 AND occId = 1;
+
+SELECT Occupation.name Statistic.data FROM Occupation
+WHERE wardId = 'E05002003'

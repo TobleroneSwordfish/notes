@@ -1,0 +1,11 @@
+Observer pattern is just anything that registers a list of things and sends stuff to them
+Kay den
+
+extends inherits from a class, implements implements an interface
+Can only inherit from one class, so use interfaces for "multiple inheritence" kinda
+
+Default methods are cheating
+Like printing to console in Haskell
+
+Optional is a Maybe
+Goddamnit Haskell go away

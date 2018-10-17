@@ -1,0 +1,19 @@
+C lecture on 3 hours of sleep and more than that in cider bottles.
+Seems good.
+Water tastes funny.
+And then somebody thought up the JVM and all the RAM was lost forever.
+Expand Stack.
+gdb - debugger
+Memory for function args stored by caller, although they are local to the function.
+Memory leaks bad, can be made less so by garbage collection or detection libs
+Machine code is fixed to a point in memory, can be relocated or fooled using virtual memory
+Position independent code exists, but no-one uses it because people are fucking idiots.
+Dynamic linking allows libraries to be shared, so only loaded once
+DLLs are aweful, fucking windows
+Linux and Mac use SOs, which are actually less efficient, but hacky people like them more.
+I'm trying to hammer a screw, why didn't they design for this?!
+Uhhh, TB of main memory????
+All modern computers are a horrible mess, this somehow doesn't surprise me.
+I want that job, ear model.
+WINDOWS, I SEE WINDOWS. REEEEE.
+ANything that isn't alphanumeric or a period can't be typed directly into a cmdln argument, use "" to escape them

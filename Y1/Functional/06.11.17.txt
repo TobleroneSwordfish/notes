@@ -1,0 +1,88 @@
+Eh?
+Bushes are not trees
+
+--FUNCTOR
+A functor is a structure whose contents can be changed
+
+Lists, maybes, trees and bushes all have a map function.
+
+map :: (a -> b) -> [a] -> [b]
+mapMaybe :: (a -> b) -> Maybe a -> Maybe b
+mapTree :: (a -> b) -> Tree a -> Tree b
+etc.
+
+All of these maps are generalised into fmap
+fmap :: (a -> b) -> f a -> f b
+
+The fmap function is a member of the Functor type class
+
+NOTE: f is not a function, it is a List or Maybe, Tree etc.
+class Functor f where
+	fmap :: (a -> b) -> f a -> f b
+There are two laws associated to the functor class:
+1. Functor identity: fmap id = id
+2. Functor composition: fmap g . fmap f = fmap (g . f)
+
+So since we have a type class, there should be instances of this, one for each of the relevant types
+
+instance functor [] where
+	fmap f [] = []
+	fmap f (x:xs) = f x : fmap f xs
+
+or
+
+fmap = map
+
+Similarly:
+
+instance Functor Tree where
+	fmap f (leaf x) = Leaf (f x)
+	fmap f (Fork l r) = Fork (fmap f r) (fmap f r)
+
+or
+
+fmap = mapTree
+
+succ x = x + 1
+For intuition consider: fmap double . fmap succ
+
+	/\
+       3 /\
+	4  5
+fmap succ
+	/\
+       4 /\
+	5  6
+fmap double
+	/\
+       8 /\
+	10 12
+
+-- FINDING ELEMENTS
+Here is a function that tells you if an element is present in a list
+
+elem :: Eq a => a -> [a] -> Bool
+elem x [] = False
+elem a (y:ys)
+	| x == y = true
+	| otherwise = elem x ys
+
+Finding the element takes at best one == operation, and at worst n == operations (where n is the length of the list)
+on average n/2 steps
+This is O(n)
+
+That may have been the worst big O explanation I've ever heard. Lies to children are stronk
+
+We will try to improve this by using a Bush instead of a List
+Create ordered bush, elements to left smaller than right
+
+	5
+       1  6
+         5  39
+           38
+	  9  38
+Standard binary tree, same insertion procedure
+
+Ord brings in '<' and '>'
+insert :: Ord a => a -> Bush a -> Bush a
+insert 

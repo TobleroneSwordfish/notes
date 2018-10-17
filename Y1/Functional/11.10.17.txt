@@ -1,0 +1,58 @@
+Pen and paper exams in compsci...
+Manly scream.
+Right, but we're not blind, so IDEs are useful
+Well played sir.
+
+alpha :: Int -> Char
+alpha 1 = 'a'
+alpha 2 = 'b'
+... 		--homework, fix this horrible mess using chr
+alpha 26 = 'z'
+
+map alpha [1, 3, 5]
+= {def :}
+map alpha (1:[3, 5])
+= {def map}
+alpha 1 : map alpha [3, 5]
+= {def alpha}
+a : map alpha [3, 5]
+= {def :}
+'a' : map alpha (3 : [5])
+= {def map}
+'a' : alpha 3 : map alpha [5]
+= {def alpha}
+ 'a : 'c' : alpha 5 : map alpha []
+= {def alpha}
+'a' : 'c' : 'e' : map alpha []
+= {def map}
+'a' : 'c' : 'e' : []
+= {def :}
+[a, c, e]
+
+List comprehensions
+
+Provide useful syntax for building lists
+
+square of all odd numbers
+
+[x * x | x <- nats, odd x]
+
+This assumes nats = [0..] and odd :: Int -> Bool, that is true when the value is odd
+
+The expression above is syntactic sugar for:
+map square (filter odd nats)
+
+Operator syntax in Haskell report
+Operators made up of symbols
+
+functions start with lowerCase letters followed by other characters or "primes" ie "'"
+
+Operators are infix by default, which means that we use them between two values eg x + y is infix
+
+Functions are prefix by default, we write them before the argument eg plus x y
+
+An operator can be made prefix by surrounding it by parentheses. eg. x + y = (+) x y
+this explains why the type of addition is (+) :: Int -> Int -> Int
+
+A function can be made infix by surrounding it by backtick quote marks eg.
+mod 3 5 = 3 `mod` 5

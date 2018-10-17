@@ -1,0 +1,16 @@
+﻿Fucking eggs
+Transition function takes state and letter and returns state, one for whole FSM.
+Jump in river mostly, river is good
+We need opera glasses
+
+DFA defines regular languages
+
+DFA defined by M = (Q, Σ, δ, ε, F)
+
+Where
+Q is all states of machine
+Σ is alphabet
+δ is transition function
+q0 is the start state
+F is a subset of Q, the accepting states
+

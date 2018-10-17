@@ -1,0 +1,84 @@
+Harvard: segregation, can be optimized for read only and low power instruction memory
+Instructions are safe from "accidental" overwriting
+disadvantages:
+ahahaha
+
+Von Neumann:
+Instructions = Data = Information
+Most common processor memory architecture
+
+Major bottleneck with data retrieval
+Problem only getting worse as memory capacity has increased and processor speed has increased
+Data throughput rates haven't kept up
+
+Workarounds:
+Caching, so you don't actually have to do the fetches
+
+move 29 into acc
+store acc (29) in loc 9
+move loc 9 (29) into acc
+subtract 29 from 29, storing 0 in acc
+
+
+she doesn't know shit about computer science does she?
+she said 'programming' as if it's an obscure foreign food
+Corporate person, knows her job
+And her job is mostly buzzwords
+'a crosssection of companies'
+
+her fucking voice
+ouch
+ikr
+
+Oh gods she's a recruiter
+Noplz
+
+I DON'T FUCKING WANT TO WORK INDUSTRY
+I DON'T CARE
+FUCK OFF
+I want to start my own business, so board rooms can get fucked
+
+She asked how you'd understad it
+Read the definition again
+
+I thought we finished this in college, ffs
+that is a weird ass bunny
+Looks like an asian dog
+HJGSAJJYSGYDayeshgku  grdf
+argh
+How much weed did it take to write this?
+not enough
+
+Batman was born a billionaire
+fair
+If they were trying to pick a bad example they couldn't have done much better
+in all honesty, my mindset perfectly satisfies me most of the time so they can go frick themselves
+Sounds painful
+i was reading a teenage fantasy book some years ago and i remember this sentence:
+(some guys were being assholes) 'Jace suggested they do something anatomically impossible'
+That's a good way of putting it
+Pratchett does that all the time in discworld - talks around things to make them funnier
+still need to read pratchett
+^
+
+Increasing my level of cynicism as a reaction to this bullshit
+Figuring out how you finance a startup, cause I sure as hell aren't going to have money
+
+hypnosis
+
+Nope
+
+Looks like you've got a stick up your arse
+
+Oh, you're a 3.4? Pah
+is that a black mirror reference?
+YAS
+It's so fucking true
+what i am going to be doing over the holidays: studying and seeing my friends
+what i am not going to be doing over the holidays: giving a shit about linkedn
+
+They made us do it in college
+I setup mine to say that my dream job was a cheesemonger
+Teacher questioned it, just deadpan kept it up
+Research is my backup if shit fails
+same but i couldn't be arsed to explain i want to do international relations

@@ -1,0 +1,55 @@
+COMPUTERS?! In computer science?!
+
+tries cont.
+
+Single element trie:
+
+single :: v -> Trie k v
+single x = Trie (Just x) Map.empty
+
+Note that the name empty exists in multiple classes, lookup and insert also.
+To avoid clashes we import external names in a qualified way:
+english_irl
+
+import qualified Data.Map as M
+
+then later we can do
+
+M.empty
+
+to refer to the Map empty function
+
+lookup :: Ord k => [k] -> Trie k v -> Maybe v
+lookup [] (Trie mv kvs) = mv
+lookup (k:ks) (Trie mv kvs) = 
+	case Map.lookup k kvs of
+		Nothing -> Nothing
+		Just ts -> lookup ks ts
+
+To insert into a Trie we take in a list of keys and generate Tries as appropriate:
+
+insert :: Ord k => [k] -> v -> Trie k v -> k v
+insert [] v (Trie mv kvs) = (Trie (Just v kvs))
+insert (k:ks) v (Trie mv kvs) = Trie mv kvs'
+	where
+		kvs' :: Map k (Trie k v)
+		kvs' = case Map.lookup k kvs of
+			Nothing -> Map.insert k (insert ks v empty) kvs
+			Just ts -> Map.insert k (insert ks v ts) kvs
+
+this is so weird without mutation!
+
+The insert function overwrites existing data, let's fix that:
+
+update :: Ord k => [k] -> (v -> Maybe v) -> Trie k v -> Trie k v
+update [] f (Trie Nothing kvs) = Trie Nothing kvs
+update [] f (Trie (Just x) kvs) = Trie (f x) kvs
+update (k:kvs) f (Trie mv kvs) = Trie mv kvs' where
+	kvs' :: Map k (Trie k v)
+	kvs' = case Map.lookup k kvs pf
+		Nothing -> kvs
+		Just ts -> Map.update (Just . update ks f) k kvs
+
+Are you subtly trying to fix my slouching?
+//nah, just annoying you, ouch
+

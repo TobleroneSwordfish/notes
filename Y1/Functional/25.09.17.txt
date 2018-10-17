@@ -1,0 +1,20 @@
+First lecture. Fuck.
+Win7 masterrace. Good start.
+Functional programming. Dr Nicolas Wu.
+
+Values not actions.
+Statements order matters, expressions not.
+Few slides in we get an XKCD. I'm going to like it here.
+Garbage collection, higher order funcs, generics originated in functional.
+No state, no mutation.
+learnyouahaskell.com
+book.realworldhaskell.org/read
+tryhaskell.org
+Get haskell textbook from library - thinking functionally with haskell, programming with h, etc.
+Blackboard has slides and lecture recordings
+Codio from blackboard practicals
+Worksheets on course website, work through each sheet, written pen answers, get signed off by TA during labs.
+Exams are pen and paper. ugh.
+
+Environment
+Atom, haskell GHC

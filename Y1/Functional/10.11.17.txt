@@ -1,0 +1,66 @@
+Do not question the strange brown goop
+I like code
+I can write the code
+Why do we have a pen and paper bloody exam?!
+I dislike thinking on general principles
+
+Ord a gives a '<', '>' etc AND '='
+Eq a gives a '='
+Always try to use the lowest one
+
+If elements cannot implement Ord then no point using bush or tree
+
+Nic says this will be a hard lecture
+GNNNH
+
+Some of those beans are dangerous
+
+It turns out that we can also fold a maybe:
+
+Use structure of maybe:
+
+data Maybe a = Nothing | Just a
+
+This has introduced the two constructor functions called Nothing and Just
+This is their definition.
+
+The types:
+
+Nothing :: Maybe a
+Just :: a -> Maybe a
+
+AGH aniseed
+
+foldMaybe :: b -> (a -> b) -> Maybe a -> b
+foldMaybe nothing just Nothing = nothing
+foldMaybe nothing just (Just x) = just x
+
+You are the instigator
+I am merely the perpetrator
+
+data Tree a = Fork (Tree a) (Tree a)
+	| Leaf a
+
+the type of the constructors
+
+Leaf :: a -> Tree a
+Fork :: Tree a -> Tree a -> Tree a
+
+So now we use Tree a = b for the signiture of foldTree
+
+foldTree :: (a -> b) -> (b -> b -> b) -> Tree a -> b
+foldTree leaf fork (Leaf x) = leaf x
+foldTree leaf fork (Fork l r) = fork (foldTree leaf fork l) (foldTree leaf fork r)
+
+for bushes:
+data Bush a = Tip
+	| Node (Bush a) a (Bush a)
+
+Node :: Bush a -> a -> Bush a -> Bush a
+Tip :: Bush a
+
+foldBush :: b -> (b -> a -> b -> b) Bush a -> b
+foldBush tip node Tip = tip
+foldBush tip node (Node l x r) = node (foldBush tip node l) x (foldBush tip node r)
+
+This is not the hand you're looking for

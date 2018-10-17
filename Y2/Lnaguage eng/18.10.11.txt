@@ -1,0 +1,90 @@
+﻿Yay folds
+Yeeeaaaah, functors
+That
+The Heart of Folding sounds like an interesting item
+itxs sounds lieka a country romcom movie
+I don't really need a character to indicate Sharlene because all you generally write is "hi" and that kind of typo mess
+
+
+--------------------The expression problem---------------------
+The expression problem concerns itself with finding a solution to the following
+ is it possible to extend the syntax and semantics of a language in a modular fasion
+
+Consider the type Expr from a while back
+
+> data Expr = Val Int | Add Expr Expr
+
+Here we want to extend the syntax by adding a new operation for multiplication
+but we do not want to modify any existing code (incl def of Expr)
+
+> eval :: Expr -> Int
+
+Again, we want to extend the semantics without modifying code
+In this case we can just write a function of type Expr -> b
+
+To stufy the expression problem, we will study the generalization of folds called a catamorphism
+We do this because folds are a way of reducing data structures in a composable way
+and syntax trees are just data structures
+
+--------Catamorphisms------------------
+
+> data [a] = []
+> 	| a : [a]
+
+> foldr :: b -> (a -> b -> b) -> [a] -> b
+> foldr k f [] = k
+> foldr k f (x:xs) = f x (foldr k f xs)
+
+The first step is to deconstruct the type of lists to expose its generic structure
+
+The definition of lists is the same as this shit with sugar
+
+> data List a = Empty
+> 	| Cons a (List a)
+
+We remove recursion and mark it with a parameter k for kontinuation
+
+> data ListF a k = EmptyF
+> 	| ConsF a k
+
+The k shows us where List a was recursive
+
+He's going to accidentally make a KKK joke on this bit
+To go on the list with snickers and consent
+
+We now make the recursive parameter something we can change programmically by giving a Functor instance to ListF a
+> instance Functor(ListF a) where
+> 	fmap :: (x -> y) -> ListF a x -> ListF a y
+
+MapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMap
+Map
+
+map :: (a -> b) -> [a] -> [b]
+|
+V
+fmap :: (a -> b) -> f a -> f b
+
+
+We now need to combine a type that gives us the fixed point of data.
+This is defined:
+
+> data Fix f = In (f (Fix f))
+
+This data type allows us to generalize all (non-mutually recursive) recursive data types
+For instance instead of List a, we can write Fix (ListF a)
+To demonstrate this, we show that List a and Fix (ListF a) are isomorphic
+
+> toList :: Fix (ListF a) -> List a
+> fromList :: List a -> Fix (ListF a)
+
+we say that List a and Fix (ListF a) when:
+	(toList.fromList) = id
+	and (fromList.toList) = id
+
+In other notation we write: List a ≌ Fix (ListF a)
+
+Let's define these functions:
+
+> fromList :: List a -> Fix (ListF a)
+> fromList Empty = In EmptyF
+EmptyF has type f (Fix f) = ListF a (Fix (ListF a))

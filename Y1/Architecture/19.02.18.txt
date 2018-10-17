@@ -1,0 +1,15 @@
+arrays
+stack
+prog
+consts, strings
+globals
+stack pointer
+
+params
+locals
+params
+
+x + 3
+name "x" plus number 3
+
+tree struct down

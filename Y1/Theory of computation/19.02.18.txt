@@ -1,0 +1,45 @@
+﻿Non regular languages defined by pathing lemma - LOOK AT THIS FUCK LACTOSE
+a^n b^m not regular as have to remember infinite a's
+{a^k | k >= 0} concat {a^m b^m | m >= 0}
+
+{a^m b^n | m >= n}
+
+PATHING LEMMA IN QUIZ AND EXAM LERN DIS
+
+c syntax not regular as it has to remember parentheses
+since they can be infinite, not regular
+
+Push down automata (PDAs) are DFAs with memory
+
+----------------------------Context free grammars---------------------------------
+
+Program -> List of instructions
+List of instructions -> instruction | instruction; List of instructions
+instruction -> Assignment | If Boolean Then List of instructions Else List of instructions
+Assignment -> Var := Expr
+Var -> x | y | z
+Expr -> Var + Var | Var * Var | (Expr)
+Boolean -> True | False | Expr = Expr
+
+Defines a grammar for programs in this simple language such as:
+
+Program -> List of instr -> Instr | List of instr -> instr, instr -> Assignment, instr -> Assignment, Assignment -> Var := Expr, Assignment
+...
+x := x + y, x := x * z
+
+A contect free grammar is a 4-tuple (v, Σ, R, S)
+
+V is a finite set of variables
+Σ is a finite alphabet V insect Σ = empty set
+R is a finite set of rules, each rule given by a variable and a sequence of variables and terminals
+S is an element of V and is the start variable
+
+R is V x (V U Σ)* more formally
+
+S1 -> ...
+S2 -> ...
+S3 = S1 U S2
+S3 -> S1 | S2
+
+S4 = S1*
+S4 = S1 | S1S2 | ε

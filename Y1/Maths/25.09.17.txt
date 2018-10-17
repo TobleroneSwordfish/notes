@@ -1,0 +1,78 @@
+Third lecture. Slightly less fuck. But it's maths. Fuck.
+Prepare for workshops.
+Summer 2018 exam 100%
+Class test on logic first 4 weeks during workshop
+Mock after TB1
+Friday problem class if fucked up
+Always turn up, even if you've solved everything, might be able to teach others. Weeeeeell okay.
+Solutions do not need to be handed in, do it because failing sucks.
+
+Logic and proof.
+Syntax defines symbols and objects
+Semantics associate meaning
+
+proposition is a statement (x is true)
+
+1 n
+2 y
+3 y
+4 y
+5 n
+6 y
+7 n
+8 y
+9 y
+10 y
+
+propositions can be abbriviated using prop vars
+let p be x is y
+light_is_on makes more sense
+propositions combine to form compound
+
+2^n rows in truth table wherer n is number of vars
+
+^ and conjunction & .
+
+V or  | + inclusive or
+
+xor p or q not both
+
+¬ not "It is false that p"
+
+-> if then "p implies q"
+
+true when either p is false or q is true
+p q p -> q
+T T   T
+T F   F
+F T   T
+F F   T
+When p is false, we cannot say whether q is true
+if p is true and q is false then obviously the implication is false
+p is antecedent, q is consequent
+
+p -> q
+q -> p converse
+¬p -> ¬q inverse
+¬q -> ¬p contrapositive - equivilent to p -> q
+
+inverse and converse equivilent
+positive and contrapositive equivilent
+
+if and only if <->
+(p -> q) ^ (q -> p)
+
+ie p and q have same value TT or FF
+
+Unary connective takes one argument, binary takes two.
+
+alphabet: A set of propositional variables (p, q, r, s etc), propositional connectives (true, false, ¬, ^ etc), punctuation "(" and ")"
+grammar: Each of the propositions is well formed, if p is WFF then ¬p is, if p and q are WFFs then so are p ^ q, p V q, p xor q, p -> q, p <-> q
+
+Exercise - do it.
+
+Semantics defined in truth tables, as they define the meaning of operators
+
+Read up on prop logic and bool algebra
+
+Discrete maths and its applications in library.

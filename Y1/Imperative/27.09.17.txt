@@ -1,0 +1,24 @@
+block comment: /*...*/
+snowy putty for remote HDD access
+do not submit codio, if locked out visit Ian
+can write one program over multiple (3?) weeks, submit progress at end of each week
+
+comment at top of source to summarise file
+#include equivilent to library being in the file
+angle brackets in #include indicate to root to default folder, "" indicate to root to current directory
+entry point must be called "main" - note lowercase
+setbuf sets the buffering type, usually NULL for immediate output
+printf is PRINT with Formatting
+main returns 0 for success, anything else - default 1 for failure
+you can use custom error codes for higher level scripts
+function lacking return statement returns garbage from register, main exception as it always returns 0
+%d inserts integer - equivilent to %i (because C, %d is more conventional). %f inserts float (including double), etc
+function order important, forward definition exists to edge cases and recursion
+feel like me and Theano are contributing most of the questions. Well, mostly Theano
+don't just shove everything in the return statement :(
+max int is (2^31 - 1) as the 32nd bit is a sign bit, long is 64 bit (32 in windows because fuck you)
+
+--CYGWIN--
+
+make sure that code works on linux/cygwin - NOT just native windows
+write code for majority cross platform code, deal with windows shit later

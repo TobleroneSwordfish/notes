@@ -1,0 +1,29 @@
+Got here early today, no idea why.
+Haskell is lazy.
+/r/surrealmemes
+
+isEmpty :: [a] -> Bool
+isEmpty [] = True
+isEmpty (x:xs) = False
+
+isSingle :: [a] -> Bool
+isSingle [] = False
+isSingle [x] = True - or isSingle(x:[])
+isSingle (x:xs) = False
+
+I'm pretty sure you're wearing some form of magic invisibility sweater at this point.
+
+take :: Int -> [a] -> [a]
+take 0 xs = []
+take n [] = [] - fail silently
+take n (x:xs) = x : take (n-1) xs
+
+--Homework--
+define drop :: Int -> [a] -> [a]
+drops the first n elements
+
+(++) :: [a] -> [a] ->[a]
+[] == ys = ys
+(x:xs) ++ ys = x:(xs ++ ys)
+
+"it" is last evalutated expression

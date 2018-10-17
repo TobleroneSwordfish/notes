@@ -1,0 +1,35 @@
+---DLISTS
+We will capture the datatype [a] -> [a] in a new datatype of its own.
+
+newtype DList a = Dlist ([a] -> [a])
+
+Note that we name the constructor and the type the same thing, convention with newtypes
+
+fromDList :: DList a -> [a]
+fromDList (DList fxs) = fxs []
+
+Here f xs is a function that takes in a list and appends it to the end of the DList.
+So applying the empty list gives us a fully formed list
+
+There is a guy in front of me writing with the page literally at right angles to him.
+Looks like he's writing japanese
+
+toDList :: [a] -> DList a
+toDList [] = DList id --remember id :: a -> a and id x = x
+toDList (x:xs) = DList ((x:) . unDList (toDList xs))
+
+unDList :: DList a -> ([a] -> [a])
+unDList (DList fxs) = fxs
+
+So we can trace back our rationale for the MonadNondet and generalise the notion of putiting lists together
+
+However providing MonadNondet means providing Monad and  therefore also Functor instances, this can be done,
+but only by transforming to list by using fromDList, working in that domain, and back with toDList.
+To keep things "simple" we will provide the monoid instance for DList a:
+
+instance Monoid (DList a) where
+	mempty = DList id
+	mappend (DList fxs) (DList fys) = DList (fxs . fys)
+
+So while a DList has given us O(1) access to an append operation, it is not without its disadvantages:
+we can no longer pattern match on the head of the list as there is no head

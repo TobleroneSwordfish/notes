@@ -1,0 +1,20 @@
+//poke
+V(pk, m, S(sk, m)) = "yes"
+More or less, yup.
+But what if digital signitures are decided to be "harmful"? Goddamn May...
+
+Windows NSAKEY, spicy drama
+Bloody americans.
+Mostly because all end users are idiots. - One of the great axioms of computer science.
+
+It'd be great if they gave us a fake key for the coursework and expected us to check it
+
+AGain, all end users are idiots, 90% of the problems are just this.
+//So, why can't you encrypt, Johnny?
+Because my name is Jonny, not Jhonny.
+//details
+//fucking americans   angry squinting intensifies
+//Cotumblr.commmented out.
+--shush children
+I thought Theano was mum?
+//not in security

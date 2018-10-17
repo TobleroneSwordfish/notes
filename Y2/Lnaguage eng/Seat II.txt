@@ -1,0 +1,27 @@
+1.2) 1)
+data Graph = empty
+	| vertex Int
+	| overlay Graph -> Graph -> Graph
+	| connect Graph -> Graph -> Graph
+
+2)
+vertices :: Graph -> [Int]
+vertices empty = [0]
+vertices vertex x = [x]
+vertices overlay g1 g2 = unique ((vertices g1) ++ (vertices g2))
+vertices connect g1 g2 = unique ((vertices g1) ++ (vertices g2))
+
+3)
+edges :: Graph -> Int
+edges empty = 0
+edges vertex x = 0
+edges overlay g1 g2 = edges g1 + edges g2
+edges connect g1 g2 = edges (overlay g1 g2) + (vertices g1) * (vertices g2)
+
+4)
+roots :: Graph -> [Int]
+roots empty = []
+roots vertex x = [x]
+roots overlay g1 g2 = (roots g1) ++ (roots g2)
+roots connect g1 g2 = roots g1
+

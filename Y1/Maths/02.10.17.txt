@@ -1,0 +1,16 @@
+Everyone's doing logic atm.
+Interpretation is arrangement of values for prop vars
+Tautology always true for any interpretation, contradiction is opposite - always false
+
+Satisfiable if true for at least one
+Unsatisfiable if false for all
+Formula is a contradiction iff its negation is a tautology
+Contingency is neither a tautology nor contradiction, must have one value assignment that is true and one that is false
+Logically equivalent iff p <-> q is tautology
+Single A4 sheet can be taken into class test.
+NO WAY.
+NAND is up arrow
+NOR is down
+{^, V, ¬} functionally complete
+By DeMorgan's then {^, ¬} and {V, ¬} are
+CNF from DNF truth table --figure it out

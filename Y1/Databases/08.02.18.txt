@@ -1,0 +1,10 @@
+SQL is fake news
+Don't circular reference, standard C++ shizzle
+
+-- comment
+/*
+comments
+comments
+*/
+
+SELECT name FROM Student, Enrol WHERE Enrol.unit = 16 AND Enrol.student = Student.id;

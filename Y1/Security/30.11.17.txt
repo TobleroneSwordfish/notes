@@ -1,0 +1,34 @@
+And then we started doing online and contactless transactions and all that went out the window.
+POS Ram scrapers, due to POS systems temporarily storing data such as credit card numbers.
+Introduction of chip and pin actually increased card fraud levels
+
+Card authentication
+Cardholder verification
+Transaction authorisation
+
+Chip authenticates the card, pin authenticates the user
+
+Pin is stored un-encrypted, because fuck security I guess...
+
+Static data authentication, same auth message each time - dumbass idea.
+
+Card readers contain anti-tamper devices
+
+Ahh old BBC docs
+That uhh readout, MMM HAX
+Pi chart = hax
+MYSTERY
+
+Welp, now we have a backup career plan
+
+Goddamnit, if academics can do it, criminals certainly can
+
+UK cards association responded saying that cambridge shouldn't have published it.
+Morons
+
+And then an example of that MITM attack appears in france a few years later.
+
+A sitcom of nerds, that opening...
+
+LALALALALALALALALAAA IT'S NOT HAPPENING GUYS LALALALA
+-Barclays

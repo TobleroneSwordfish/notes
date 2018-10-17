@@ -1,0 +1,11 @@
+Society is built on trust, you trust a bank to store your savings, you trust a shop when you buy a TV that there will be a TV in the box.
+This works because we can trust each other, and hold each other accountable - if that box turns out to contain a brick,
+then society says you can go back to the shop and complain.
+This implicit trust is lost over the internet, where everyone is reduced an anonymous number, and none of the normal rules of society apply or even make sense anymore.
+Encryption allows us to regain that trust.
+Digital signatures --something something
+Asymmetric encryption systems such as PGP enable us to do so much more online - communicating, banking, shopping.
+
+These applications of encryption are widly used and accepted around the world,
+however some systems are less accepted and are seen by many to have no non-malicious uses.
+The Onion Router (TOR) is an anonymity 

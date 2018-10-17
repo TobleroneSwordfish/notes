@@ -1,0 +1,21 @@
+Truth tables for implication and biconditional
+NAND and NOR logic
+Names of all laws
+Equivalence of implication and biconditional
+Definition and examples of con/dis-junctive normal form
+
+p q p->q p<->q
+0 0   1    1
+0 1   1    0
+1 0   0    0
+1 1   1    1
+
+NAND logic:
+NOT = A NAND A
+AND = (A NAND B) NAND (A NAND B) --invert the output
+OR = (A NAND A) NAND (B NAND B) --invert the inputs
+XOR = (A NAND (A NAND B)) NAND (B NAND (A NAND B)) --something
+
+NOR logic
+NOT = A NOR A
+OR = (A NOR B) NOR (A NOR B)

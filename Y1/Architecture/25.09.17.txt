@@ -1,0 +1,7 @@
+Second lecture. Still fuck.
+Software: Application, compiler, OS -> Interface: Instruction set architecture (ISA) -> Hardware: Micro architecture, digital electronics, maths and phys
+Another XKCD, brilliant.
+www.elo.bris.ac.uk - BLACKBOARD (little bit shit, overcomplicated, get used to it)
+Technical detail not in lectures, do it yourself you fuck.
+We are guinea pigs again. Great.
+One of two lab slots

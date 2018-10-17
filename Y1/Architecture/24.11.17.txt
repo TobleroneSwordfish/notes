@@ -1,0 +1,5 @@
+Hah! Memory IS RAM!
+Well if they're at that low address then they're probably OS consts
+Hippy friend from cambridge
+HARD DRIVE ACCESS GAH
+Also only 16gb RAM? Pah

@@ -1,0 +1,73 @@
+﻿2 hours
+S'fine
+
+-----------------------Chomsky normal form-----------------------------
+
+CNF now is Chomsky not Conjunctive, nice
+
+Rules are:
+
+A -> BC
+or
+A -> a
+
+B, C not start vars
+
+only start vars can point to ε
+
+1) Remove start var from RHS by adding new S pointing to old
+
+2) Remove ε rules:
+for any rule R -> uAw
+where A -> B|ε
+add R -> uw
+
+So for R -> 0A1A0
+R -> 01A0 | 0A10 | 010
+
+When you do this you sometimes just shift the ε
+So just keep doing it, dumbass
+Until you can get down to S -> ε
+
+Hey, my keyboard can do greek today without opening random alt menus
+Nice
+Have no idea why, but nice
+Something something windows 10
+
+3) Remove any A -> B - cannot go to single var
+To remove A -> S, replace S in RHS by all actual definitions of S
+And yes, we have to patch the new start var we just added, because ofc we do
+"I know guys, while trying to get this to fit a rule, let's add bits that don't fit the rule" - theory
+
+4) "Fix it" - direct quote
+Removing X -> ABCD...
+
+A -> u1u2 .. uk
+A -> u1A1
+A1 -> u2A2
+A2 -> u3A3
+...
+A(k-2) -> u(k-1)uk
+
+Concrete:
+S0 -> ASA
+S0 -> A A1
+A1 -> SA
+WHY WOULD YOU CALL THAT A1 PEOPLE WILL GO MAD
+
+Need more coffee
+STarted drinking coffee
+Bad idea
+Don't do it kids
+
+But, I am here on 2 hours sleep
+ANd am almost awake
+So maybe coffee is helping
+
+A -> aB
+
+X -> a
+A -> XB
+Problem solved
+
+Any derivation over a word of length n will have 2n - 1 steps

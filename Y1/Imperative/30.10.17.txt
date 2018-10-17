@@ -1,0 +1,34 @@
+#include <iostream>
+IT LIES TO MALLOC, YESSS
+//I HOPE NICK SHOWED IAN THE BOARD WITH MALLOC (I HADN'T REALISED I WAS WRITTING IN CAPITALS)
+That is the code used by 99% of c programmers
+Never Eat GetS
+Always close files.
+// so if i want to use a pointer, how do i define it in main?
+SOmething like
+
+int *i;
+int thing = 6;
+*i = &thing;
+printf("%i\n", i);
+
+prints 6
+
+Never use getline or readline, ie never use non-standard. Yeah, we get that by now.
+
+%[^,]%*c is valid c code
+
+Never use fscanf either
+
+Use feof for user input, just in case
+
+rb and wb stop processing line endings
+
+fprintf shits some string into a file
+fflush forces the shit
+
+always error check fopen, because file could be missing, wrong disk, universe, etc.
+
+But, everything is modular, so how can there be a limit? You just keep going to higher levels of abstraction, until the code become if (goingToCrash) { dont() };
+
+That never happens

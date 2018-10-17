@@ -1,0 +1,88 @@
+Not pulling punches, saying it like it is.
+Haskell has mutation?! Goddamnit my life is a lie
+/*
+i was sitting in mvb and david showed up and chatted with me for like 10 mins and i was doing haskell so i told him i'm a couple of weeks behind
+and he said 'if it's only a couple of weeks it's fine, i think a lot of people have just given up on it and nick has said 
+that he'll be happy if by the end of the unit SOME people have SOME idea about haskell'
+*/
+
+fmap :: (a -> b) -> f a -> f b
+
+the type of (reverse) bind:
+
+(=<<) :: (a -> m b) -> m a -> m b
+
+A monad is a class of types with the following operations:
+
+class Monad m where
+	return :: a -> m a
+	(>>=) :: m a -> (a -> m b) -> m b
+
+">>=" is pronounced "bind"
+It is essentially a very pedantic ; as in c;
+
+p >>= \x -> f x
+
+initial program is p
+f takes the result and produces the next from
+x is the result of the initial program
+
+First execute p, call the result of p the the value x, and use this with f to make the next program "f x" which we execute
+Example:
+x = 5;
+x = x + 1;
+
+is where p is (x = 5)
+; is >>=
+and x = x + 1 is \x -> f x
+
+roughly, f x = x + 1 here
+
+
+
+A valid monad instance must satisfy three laws:
+
+1. left return 
+return x >>= f = f x
+
+return x has type m a
+f has type a -> m b
+so f x has type m b
+
+2. right return
+mx >>= return = mx
+mx is of type m a
+return is of type a -> m a
+then LHS has type m a, so RHS also does
+
+3. associative
+(mx >>= f) >>= g = mx >>= (\ x -> f x >>= g)
+
+g has type b -> m c
+lhs has type m c
+
+---------
+
+Every monad is a functor
+
+Simplest monad is the identity monad:
+newtype Id a = Id a
+
+Id on LHS is type, RHS is constructor
+
+The functor instance for Id:
+instance Functor Id where
+	--fmap :: (a -> b) -> Id a -> Id b
+	fmap f (Id x) = Id (f x)
+
+Monad instance for Id:
+instance Monad Id where
+	--return :: a -> Id a
+	return x = Id x
+	
+	--(>>=) :: Id a -> (a -> Id b) -> Id b
+	Id x >> f = f x
+
+
+Lucas has lost it and is mumbling about potatos, Theano hates everything and Max is staring at a black screen
+Sounds like a functional lecture!

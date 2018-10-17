@@ -1,0 +1,40 @@
+﻿Communism is Unity, Unity is the people
+Communism is a CFG
+
+Queue machine can accept 0^n 1^n 2^n
+By popping 0's from the top and pushing 1's to the bottom etc
+
+Turing machine: {Q, Σ. Γ, δ, q0, qaccept, qreject}
+
+Q - finite set of states
+Σ - input alphabet, does not contain blank
+Γ - tape alphabet - Σ + blank
+δ - Q x Γ -> Q x Γ x {L, R}
+
+Accepting config - u qaccept v
+Rejecting config - u qreject v
+Starting config - q0 w
+
+uaqbv yields δ(q,b) = (p, c, L) --read b, replace with c, move left
+
+upacv
+
+which yields δ(q,b) = (p, c, R)
+
+uacpv
+
+
+qbv yields δ(q,b) = (p, c, L) --cannot move left
+pcv
+
+Turing machine M accepts w if there exists C0, C1, ..., Ck configs
+
+st. C0 = q0 w
+Ci yields C(i+1) for all i <= k + 1
+Ck = accepting (u qaccept v)
+
+L(M) = {w | M accepts w} is the language recognised by M
+
+A TM is a "decider" if it halts for any input
+
+A language L is "decided" by a TM M if M is a decider and M recognises L

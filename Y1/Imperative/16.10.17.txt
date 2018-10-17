@@ -1,0 +1,26 @@
+hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+Thanks for the contribution.
+so harsh.
+life is harsh.
+IT DOESNT HAVE TO BE
+WE MUST BUILD A BETTER WORLD! A COMMUNIST UTOPEA- WAIT NO, THAT WENT BADLY
+lols
+
+I submitted most of the bits coursework for grade extension.
+
+Point#238 on why english is shit.
+
+0x = hex number
+never start numbers with 0, can indicate octal
+
+%x in printf means print in hex
+
+char may be signed or unsigned, specify if you need numbers outside of ascii range
+
+stdint.h contains exact byte length integer representations
+
+-pedantic, might as well
+
+r/fellowkids
+
+Here comes dah OOP

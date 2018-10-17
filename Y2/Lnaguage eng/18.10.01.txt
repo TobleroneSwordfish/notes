@@ -1,0 +1,69 @@
+Welcome to 1618 or 2018, not really sure.
+Nick part II return of the Haskell
+Oh boy, more monads
+EtSETera eh eh?
+
+100% exam, 50% Nick, 50% Oliver
+
+Java is definitely a big blob of stuff
+
+A language consists of three main components:
+syntax - the shape of grammar/words/vocab - not meaning
+semantics - the meaning, a function from syntax to some domain
+pragmatics - the purpose of a language
+
+A domain specific language (DSL) is a language that has been crafted with a specific purpose in mind.
+Do not have to be Turing Complete
+
+Some DSLs come equipped with all the features of general purpose languages:
+Parser, syntax highlighting, IDE, compiler, docs etc
+
+Embedded DSLs are defined inside other (host) languages, do not need parser etc.
+Disadvantage: can't kerfuckle with syntax
+
+An EDSL can be either a deep or shallow embedding
+Deep embedding - syntax is concrete datatypes, semantics given by evaluation
+Shallow embedding - syntax is borrowed from host, semantics directly given
+
+"3 + 5" is just a string
+3 + 5 is not
+[[3 + 5]] :: Int
+
+We use denotational brackets ([[]]) to ascribe a semantics
+
+[[3 + 5]] = [[3]] + [[5]] = 3 + 5 = 8
+
+---------------------Deep embedding------------------
+
+We can model this using a deep embedding in Haskell: (Haskell, of fucking course)
+
+> data Expr = Var Int
+>	| Add Epxr Expr
+
+Concrete syntax for 3 + 5 is then given by:
+
+Add(Var 3)(Var 5) :: Expr
+
+A parser is a function that takes a string and produces such a concrete representation.
+
+The semantics is given by an evaluation function:
+
+> eval :: Expr -> Int
+> eval (Var n) = n
+> eval (Add x y) = eval x + eval y
+
+Notice that instead of [[3 + 5]], we can now write:
+> eval (Add(Var 3) (Var 5))
+
+----------------------------Shallow embedding-----------------------------
+The shallow embedding is given directly by functions:
+(We will redefine Expr)
+> type Expr = Int
+> var :: Int -> Expr
+> var n = n
+>
+> add :: Expr -> Expr -> Expr
+> add x y = x + y
+
+Our example is now written as:
+> add (var 3)(var 5)

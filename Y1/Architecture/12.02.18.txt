@@ -1,0 +1,23 @@
+Higher level stuff now
+New lecturer looks like a dark lord
+Or possible a Grand Vizier
+That mugshot...
+I like how the URL for that page is literally just cs.bris.ac.uk/~dave/
+DAVE
+
+CISC for when you actually want to see machine code
+RISC for when you just leave it to the compiler
+
+DATA:
+transfer to or from memory, shift stuff around in registers etc
+LDAM <OPD> Areg <- mem[Oreg]
+LDBM <OPD> Breg <- mem[Oreg]
+ah fuck it I can look these up
+ALU:
+self explanitory - arithmetic
+
+CONTROL
+
+OTHER
+
+We did this in the sketch C assignment

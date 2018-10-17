@@ -1,0 +1,86 @@
+if lily says no we kindly make her leave and by kindly i don't mean kindly
+Fully agreed
+el agrees too so i'll speak with greg
+On the one hand Greg is chill, so either he'll go along with it or be too chill to do it
+nah i think he realises we need to rent a place SOON
+Myah
+does it actually make you more grumpy half the time?
+I don't know about half, I'd have to do some kind of study
+more or less than half?
+I wouldn't comment without statistically verified data
+well get that study going
+
+ISA - instruction set architecture
+
+RISC vs CISC
+
+Definition of the instruction set of a processor
+
+Backwards compatibility *spits*
+
+ISA what to do
+Microarchitecture how its done
+
+
+------ISA contents-----
+
+Op-codes
+Datatypes
+Registers
+Memory addressing modes
+Memory architecture
+Interrupts and exception handling
+I/O
+...
+
+
+1 bit op-code uhuh
+
+One-to-one mapping of bit-strings to meanings (op-codes and operands)
+
+Spoilersssss
+
+Because lecturers
+
+Halt and catch fire, useful
+
+Instruction classes:
+
+Arithmetic, comparison, memory, control flow
+
+More complex classes:
+
+Vector processing, digital signal processing
+
+------------RISC and CISC--------------
+
+Reduced vs Complex Instruction Set Computer
+
+RISC: Minimal, lightweight, and fast instructions.
+Complex instructions are made up of less complex ones
+All instructions have same fixed length and similar runtime
+
+Just keep chaining split merge modules
+
+CISC: Rich, large instruction sets. Smaller assembly code.
+If you're going to do something, there should be an instruction for it
+Mixed length instructions - can cause mess
+Processor ends up complex and in theory slower
+CISC doesn't have to use up 32 bits to say halt and catch fire
+More efficient self destruction is a real concern for modern computing
+
+RISC or CISC may be slower or faster depending on specific usage
+
+Quite possibly the most powerful man in the world charging with a flamethrower.
+This is far more worrying than best korea
+
+You two worry me sometimes...
+feeling's mutual
+touche
+
+*touché
+
+x86 is shite
+*site
+
+*c'est shitée

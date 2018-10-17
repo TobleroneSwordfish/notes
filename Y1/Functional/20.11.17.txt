@@ -1,0 +1,48 @@
+Am now awake
+Ord implies Eq
+All lecturers are just old nerds
+How many beasts were summoned?
+Wewawewawewawewa
+
+Suppose we want a really overcomplicated length function for Bush
+
+sizeBush :: Bush a -> Int
+sizeBush = foldBush tip node where
+	tip :: Int
+	tip = 0
+	node :: Int -> a -> Int -> Int
+	node l x r = l + 1 + r
+
+Now height:
+
+heightBush :: Bush a -> Int
+heightBush = foldBush tip node where
+	tip :: Int
+	tip = 1
+	node :: Int -> a -> Int -> Int
+	node l x r = 1 + max l r
+
+fromBush :: Bush a -> [a]
+fromBush = foldBush tip node where
+	tip :: [a]
+	tip = []
+	node :: [a] -> a -> [a] -> [a]
+	node ls x rs = ls ++ [x] ++ rs
+
+node ls x rs is just a backwards constructor we use to pull the values from the node
+
+Oh great, so now map means something else
+
+
+fromTree :: Tree a -> [a]
+fromTree = foldTree leaf fork where
+	leaf :: a -> [a]
+	leaf x = [x]
+	fork :: [a] -> [a] -> [a]
+	fork ls rs = ls ++ rs
+
+sizeTree :: Tree a -> Int
+sizeTree x = length (fromTree x)
+or
+sizeTree = length . fromTree
+

@@ -1,0 +1,55 @@
+﻿GNFA
+Single start state and accepting state
+Start and final states link to all other states directly
+Excepting these start and final states for every pair of states there are arrows between them
+Start state can only have arrows leading away, and final can only have arrows leading to
+Arrows have regex on them
+Since you cannot match the empty set any arrows with phi on them can be ignored
+
+Claim:
+If a language L is regular, then it is accepted by a GNFA
+
+Take DFA with multiple final states, add a new final state and ε transitions from all previous final states
+If you're missing an arrow add one with φ on it
+Start state must not have arrows leading to it, so create a new one with an ε transition to the original start state
+
+A GNFA is a tuple:
+(Q, Σ, δ, qstart, qfinal)
+where
+Q is a finite set of states
+Σ is the alphabet
+δ Q \ {qfinal} x Q \ {qstart} -> R (regular expression on that arrow)
+qstart is the start state
+qfinal is the final state
+
+δ of two states is just the regex on the arrow between them
+
+
+A GNFA 
+G = (Q, Σ, δ, qstart, qfinal)
+accepts w
+
+w = w1, w2, ... wn
+where each wi is a subword
+
+   w1
+R0 -> R1 etc
+
+st R0 = qstart
+
+wi ϵ L(δ(Ri-1, Ri))
+
+
+To remove a state from a GNFA:
+remove state then union the concatination of the regex to the other states
+Basically just keep patching the other states
+
+If a regex is on a loop it's basicallly the star of itself, because it can repeat any number of times and stay in the
+same state
+
+Can keep removing states to get a final regex between qstart and qfinal
+But it will look horrible
+Egh
+It really does
+
+EVERYTHING IS PHI

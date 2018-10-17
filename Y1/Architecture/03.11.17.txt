@@ -1,0 +1,11 @@
+Lucas caused a horrific accident with his traffic lights.
+|
+Latency is time taken for one unit to be processed fully
+Throughput is the rate at which new inputs can be supplied and outputs collected
+Not cars with three wheels, half a wheel
+Makes much more sense.
+
+Synchronous pipeline uses clock signal, asynch allows each worker to negociate.
+Latency is length of critical path
+Throughput is 1/(latency/stages)
+Lambda AF

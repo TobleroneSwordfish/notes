@@ -1,0 +1,68 @@
+Public key encryption
+RSA was original public key encryption
+
+Public key can be visualized as a padlock
+Secret key can be visualized as a ... key
+
+One way function takes in random secret key, spits out public key
+Cannot be reversed to take in public and spit out secret
+
+Three aglorithms:
+key generation - spits out related public and secret key
+
+encryption takes message, uses public key to spit out ciphertext
+
+decryption takes ciphertext and secret key, spits out message
+
+Theano! We need you! No-one else can answer questions!
+
+D(sk, E(pk, m)) = m
+
+Oh yeah, security labs this week is sending encrypted emails
+
+Charcters after '=' sign is checksum, one block of Base64
+
+Public key encryption offers no authenticity, anyone can send you encrypted messages - kinda the point
+
+Public key encryption is very slow, due to the complexity of the mathematical algorithms
+
+Hybrid encryption encrypts the message with symmetric encryption, then sends the symmetric key by public key encryption
+- PGP works using this
+
+PGP is free, open source version of RSA encryption with unrestricted key length.
+
+US government and RSA tried to sue Phillip Zimmerman, he distributed the source code as a book under free speech,
+it went all over the planet, the US government gave up eventually.
+
+Something you can't solve with guns?! Very un-american
+
+PGP went commercial, Zimmerman started selling his software
+
+Free software GNU people cloned PGP as GPG and distributed it as free software
+
+Vimeo, ofc - youtube would censor it.
+
+Even NSA cannot theoretically break GPG, of course there are ways around such as malware
+
+1% of pop use GPG, often enough to put you under government surveilllance
+
+Diffie is Gandalf
+
+---Key exchange---
+
+One way linear function
+
+What about 1 quintillionth of a thing?
+
+###Note: calculate roughly how much matter bender halved to 1 quintillion copies would consume###
+Important science
+
+Linear function: f(c * a) = c * f(a)
+
+"Proof of that, you stare at it and go 'DUH'" - David 2017
+
+Elliptic curves is voodoo
+
+RSA has massive keys
+
+EC is better
