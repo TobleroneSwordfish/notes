@@ -1,0 +1,45 @@
+1)
+eval :: Expr -> Int
+eval (Val x) = x
+eval (Add x y) = x + y
+
+2a)
+data Fix f = In (f (Fix f))
+
+inop :: Fix f -> f (Fix f)
+inop (In x) = x
+
+b)
+data ExprF k = Val Int
+	| Add k k
+c)
+In (Add (In (Val 2)) (In (Val 6))
+In (Val 4)
+In (Val 19)
+
+d)
+fromExpr :: Expr -> (Fix ExprF)
+fromExpr (Val x) = In (Val x)
+fromExpr Add (x y) = In (Add (fromExpr x) (fromExpr y))
+
+3a)
+cata :: Functor f => (f a -> a) -> Fix f -> a
+cata alg x = (alg . fmap (cata alg) . inop) x
+
+inop unpacks, then fmap (cata alg) recurses on the sub expressions, then alg is applied to the whole boiling
+
+b)
+instance Functor ExprF
+fmap :: (x -> y) -> ExprF x -> ExprF y
+fmap f (ValF x) = f x
+fmap f (Add x y) = Add (fmap f x) (fmap f y)
+
+c)
+eval' :: Fix Expr -> Int
+eval' = cata alg where
+	alg :: ExprF -> Int
+	alg (ValF x) = x
+	alg (AddF x y) = (alg x) + (alg y)
+
+d)
+can be passed around
