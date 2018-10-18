@@ -1,0 +1,115 @@
+I feel like Haskell is that guy who accosts people at parties to tell them how much better linux is
+Okay, but what is the other one?
+So it's both all downhill and uphill from here?
+Great
+
+We really don't need more depth
+
+We can also define a function that returns the length of a Fix (ListF a)
+
+> length :: Fix (ListF a) -> Int
+> length = cata alg where
+> 	alg :: ListF a Int -> Int
+> 	alg EmptyF = 0
+> 	alg (ConsF x y) = y + 1 --y is the length of the list so far so y :: Int
+Recursion is now in cata rather than length
+
+dats actually cool
+
+Barn owls screech
+
+> instance Functor (ListF a) where
+> fmap :: (x -> y) -> ListF a x -> ListF a y
+> fmap f EmptyF = EmptyF
+> fmap f (ConsF a x) = ConsF a (f x)
+
+Evalution:
+length (In (ConsF 7 (In (ConsF 9 (In EmptyF)))))
+= {length}
+cata alg (In (ConsF 7 (In (ConsF 9 (In EmptyF)))))
+= {cata}
+alg (fmap (cata alg) (ConsF 7 (In (ConsF 9 (In EmptyF)))))
+= {fmap}
+alg (ConsF 7 (cata alg (In (COnsF 9 (In EmptyF))))
+= {alg}
+1 + cata alg (In (ConsF 9 (In EmptyF)))
+= {cata}
+1 + alg (fmap (cata alg) (ConsF 9 (In EmptyF)))
+= {fmap}
+1 + alg (ConsF 9 (cata alg (In EmptyF)))
+= {alg}
+1 + 1 + cata alg (In Empty)
+= {cata}
+1 + 1 + alg (fmap (cata alg) EmptyF)
+= {fmap}
+1 + 1 + alg EmptyF
+= {alg}
+1 + 1 + 0
+= {(+)}
+2
+
+Nick is now underlining stuff to indicate its Fness
+But fuck that shit
+
+This just seems like the best way to add infinite overheads to something so goddamn simple
+
+Bull shit nick
+So, call me stupid here
+WHY DON'T WE JUST ADD THINGS UP?!
+
+Now another example of summing a list
+
+> sum :: Fix (ListF Int) -> Int
+> sum = cata alg where
+> 	alg :: ListF Int Int -> Int
+>	alg EmptyF = 0
+> 	alg (ConsF x y) = x + y
+Again, y :: Int as it's the sum so far
+
+/so many jokes to be made
+/i hope someone comes up
+/there we go
+/you done it nick
+/"and he keeps sucking all day long"
+
+A peano number is either zero or a successor of another peano number.
+
+> data Peano = Z
+> 	| S Peano
+
+So the number 3 is written S (S (S Z))
+
+Peano was a glottologist
+
+Step 1. Make a signature function for PeanoF
+
+> data PeanoF k = ZF
+>	| SF k
+
+Eyy, ZF
+
+Step 2. Define a functor instance for PeanoF
+
+> instance Functor PeanoF where
+> 	fmap :: (a -> b) -> PeanoF a -> PeanoF b
+> 	fmap f ZF = ZF
+> 	fmap f (SF x) = SF (f x)
+
+Step 3. Profit, write some actual functions
+
+> toInt :: Fix (PeanoF) -> Int
+> toInt = cata alg where
+> 	alg :: PeanoF Int -> Int
+> 	alg 0 = 0
+>	alg (SF x) = 1 + x
+
+Now we can define a doubling function:
+
+> double :: Fix PeanoF -> Fix PeanoF
+> 	double = cata alg where
+> 	alg :: PeanoF -> Fix PeanoF
+>	alg ZF = In ZF
+> 	alg (SF x) = In (SF (In SF (x))) --apply the double succ
+
+x :: Fix PeanoF, the doubled number so far
+
