@@ -1,0 +1,95 @@
+﻿----------------------Parsers
+A parser of things
+Is a function of strings
+To lists of pairs
+Of things and strings
+
+BNF - Backus Naur Form
+
+We done did this bit
+
+BNF invented for Algol
+
+A BNF statement is made up of:
+
+ε represents empty strings
+<n> represents a non-terminal
+"x" represents a terminal
+p | q represents the choice between p and q
+
+Example BNF:
+
+<digit> ::= "0" | "1" | "2" | "3" etc up to 9
+
+I like lectures I already know
+Apart from when I had to get out of bed and get a bus to get to them...
+
+We can approximate numbers by this:
+
+<num> ::= <digit>
+	| <digit> <num>
+
+The core language of BNF is usually extended with some constructs:
+
+[e] = optional e
+(e) = grouping e
+e* = 0 or more e's
+e+ = 1 or more e's
+
+ADC?
+
+Analogue to digital carry
+
+More complex example:
+
+<expr> ::= <num>
+	| <num> "+" <expr>
+
+This corresponds to the following type:
+
+> data Expr = Val Num
+> 	| Add Num Expr
+
+In principle, we do the same to convert <num> into a Num datatype. However, we will approximate this by the type Int.
+
+> type Num = Int
+
+Grammars can sometimes bee ambiguous:
+oh ffs this is literally a lecture we had from Bogdan
+A single string can be accepted by the grammar in multiple ways:
+
+<expr> ::= <num>
+	| <expr> "+" <expr>
+
+The problem here is also that <expr> is left recursive:
+there is a branch that has an <expr> before any terminal
+
+This causes problems in recursive-descent compilers, which we will get to
+
+The solution is to refactor the grammar.
+
+
+----------------------------Paull's modified algorithm-----------------------
+We can remove recursion as follows.
+Suppose we have the following grammar:
+
+A ::= Aα1 |...| Aαn | B1 | ... | Bm
+
+Where A is a non-terminal and αi, βi are BNF expressions.
+
+I miss being a quantum possibility.
+
+To apply the algorithm, we rewrite the term above to be the following: 
+A ::= β1A' | ... | βm A'
+A' ::= α1A' | ... | αn A' | ε
+
+In practice we convert the following:
+	     β
+<expr> ::= <num>
+	| <expr> "+" <expr>
+	    Α     α
+to
+
+<expr> ::= <num> <expr'>
+<expr'> ::= "+" <expr> <expr'> | ε
+

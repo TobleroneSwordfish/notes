@@ -1,0 +1,104 @@
+﻿-----------------------Composing Languages---------------------
+(ExprF = Expr_)
+Previously we looked at the following datatype as the lang for addition
+
+> data Expr = Val Int
+>	| Add Expr Expr
+
+We learnt to extract the signature functor for this by locating recursive calls
+> data Expr_ k = Val_ Int
+>	| Add_ k k
+
+The fixed Expr_ datatype is essentially Expr:
+Fix Expr_ = Expr
+
+Suppose we want to add multiplication to this language, we need a way to extend Expr_ with more constructors.
+This is achieved by the coproduct of functors.
+
+The coproduct functor is defined as:
+> data (f :+: g) a = L(f a)
+>	| R(g a)
+
+This takes two functors f, and g, and makes the functor (f :+: g).
+It introduces these constructors:
+L :: f a -> (f :+: g)a
+R :: g a -> (f :+: g)a
+
+The functor instance is defined as follows:
+
+> instance (Functor f, Functor g) => Functor (f :+: g) where
+>	fmap :: (a -> b) -> (f :+: g)a - (f :+: g)b
+> 	fmap f (L x) = L (fmap f x) -- x :: f a, f :: a -> b, (fmap f x) :: f b
+
+>	fmap f (R y) = R (fmap f y)
+
+
+Now we are ready to define the signature functor for multiplication:
+
+> data Mul_ k = Mul_ k k
+
+This introduces the datatype constructor:
+
+> Mul_ :: k -> k -> Mul_ k
+
+We define its functor instance:
+
+> instance Functor Mul_ where
+	fmap f (Mul_ x y) = Mul_ (f x) (f y)
+
+Finally, we can put the Expr_ and Mul_ languages together to have a language with both addition and multiplication:
+
+Fix Expr_ :+: Mul_
+
+This is essentially the same as describing the following datatype but in a compositional way:
+
+> data Expr' = Val' Int
+>	| Add' Expr' Expr'
+>	| Mul' Expr' Expr'
+
+Github uses this shit apparently
+
+For practical purposes, we do not work with Expr', but with Fix (Expr_ :+: Mul_)
+
+We need to write algebras of the form:
+
+> Expr_ :+: Mul_ b -> b
+
+to reduce a "Fix (Expr_ :+: Mul_)" type to a "b"
+
+to do this in a composition way, we define a way of combining Expr_ algebras and Mul_ algebras: we call this the *junction* of algebras:
+
+> (▽) :: (f a -> a) -> (g a -> a) -> ((f :+: g) a -> a)
+> (falg ▽ galg) (L x) = falg x
+    |        |      \
+(f a -> a)  (g a -> a)  (f :+: g a)
+
+> (falg ▽ galg) (R y) = galg y
+
+So now we can give a semantics to the langauge Fix (Expr_ :+: Mul_) by defining algebras:
+
+> add :: Expr_ Int -> Int
+> add (Val_ x) = x
+> add (Add x y) = x + y
+
+> mull :: Mul_ Int -> Int
+> mull (Mul_ x y) = x * y
+
+To evaluate, we write
+
+> eval :: Fix (Expr_ :+: Mul_) -> Int
+> eval = cata (add ▽ mull)
+
+We have solved the expression problem.
+Apparently
+So says Nick
+
+In fact, we can decompose the Expr_ into parts:
+
+> data Val_ k = Val_ Int
+
+> data Add k = Add_ k k
+
+After defining functor instances, we can define algebras for:
+
+Fix (Val_ :+: Add_ :+: Mul_)
