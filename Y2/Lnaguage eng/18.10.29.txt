@@ -1,0 +1,73 @@
+NB. Aaron is a lil bish
+
+Oliver is confirmed madlad
+I really want scans of those sheets now
+
+---------------------------Parsers again--------------------------------
+A parser is a function that takes in a list of characters (a string for the normal human beings) and returns an item
+that was parsed along with the unconsumed string.
+
+We can define it by:
+> newtype Parser a = Parser (String -> [(a, String)])
+
+We can use a Parser by defining a function "parse":
+> parse :: Parser a -> String -> [(a, String)]
+> parse (Parser px) = px 
+px :: String -> [(a, String)]
+
+"tHe P iS sILenT" thanks Nick
+
+Also isn't that the most pointless function ever?
+
+Now we define combinators that allow us to build parsers:
+> fail :: Parser a
+> fail = Parser (\ ts -> [])
+
+This parser always fails to parse:
+
+parse (fail) "Hello" = []
+
+
+> item :: Parser Char
+> item = Parser (\ ts -> case ts of
+	[] -> []
+	(t:ts') -> [(t, ts')])
+
+Here we have:
+parse (item) "Hello" = [('H', "ello")]
+
+Sometimes it is useful to look at the input stream without consuming anything:
+> look :: Parser String
+> look = Parser (\ ts -> [(t, ts)])
+
+parse (look) "Hello" = [("Hello", "Hello")]
+
+hellooooooooooooooooooooooooooooooooooooooo
+
+Often we want to transform our parsers from producing values of one type to another.
+For instance, we might want to transform a parser for a single Char into producing the corresponding Int.
+
+This is achieved by giving a functor instance for parsers:
+> instance Functor Parser where
+>	--fmap :: (a -> b) -> Parser a -> Parser b
+> 	fmap f (Parser px) = 
+> 	Parser (\ ts -> [(f x, ts')
+			| (x, ts') <- px ts])
+
+px :: String -> [(a, String)]
+
+wait waitwait, you can do that?! (<-)?!
+Mind :: Blown
+
+Here is a diagram of what is happening:
+
+|-------------| ts
+ x |----------| ts'
+ |
+ V
+f x
+
+We can use this to define a parser for Ints from our "item" parser. Left as an exercise to the reader. BLAEARGH
+
+Now we introduce some combinators:
+ (<$>) :: (a -> b) -> Parser a -> Parser b --li
