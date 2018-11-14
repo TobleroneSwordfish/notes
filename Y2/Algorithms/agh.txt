@@ -1,0 +1,11 @@
+1)
+drop at floor log2(n)
+
+2)
+D: 1
+B: 3, 2
+C: 3
+
+6)
+LPS[i + 1,j - 1] is true iff LPS[i, j] and S[i + 1] == S[j - 1]
+

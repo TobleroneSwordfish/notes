@@ -1,0 +1,115 @@
+﻿Why is this class literally just memes?
+THE GUYS WHO BLOW UP PLANETS?!
+
+> const a -> b -> a
+> const x y = x
+
+So very haskell
+
+Entire room sits up
+
+Sometimes we want to extend this <|> to many input parsers
+You're going to say I punched you again now
+And the argument "She headbutted my fist" doesn't tend to be taken seriously
+
+> choice :: [Parser a] -> Parser a
+> choice pxs = foldr (<|>) empty pxs
+
+Ofc he wrote the lib
+
+Again, this course is just Nick trying to teach people all the things he does anyway
+and since the uni doesn't understand it either they think it must be good.
+
+We can define a combinator that appends the result of a parse onto others:
+
+> (<:>) :: Parser a -> Parser [a] -> Parser [a]
+> px <:> pxs = (:) <$> px <*> pxs
+
+To understand this mess, first recall that most parser combinators are left associative:
+
+ (:) <$> px <*> pxs
+=
+ ((:) <$> px) <*> pxs
+
+(:) :: a -> [a] -> [a]
+=
+ a -> ([a] -> [a])
+px :: Parser a
+
+therefor
+((:) <$> px) :: Parser ([a] -> [a])
+
+(<$>) :: (a->b) -> f a -> f b
+(<*>) :: f (a -> b) -> f a -> f b
+
+Now we are ready to define combinators that correspond to + and * from BNF:
+
+e+ is written some e
+e* is written many e
+
+> some :: Parser a -> Parser [a]
+> some px = px <:> many px
+
+This parses one px and appends it to the result of "many px".
+
+> many :: Parser a -> Parser [a]
+> many px = some px <|> empty
+
+RESOLUTION
+ZOOM AND ENHANCE
+
+--------------------Monadic parsing---------------------
+Sometimes we want the control flow of a parser to depend on what was parsed.
+Suppose we have "px :: Parser a", we can define a function "f :: a -> Parser b".
+The function "f" inspects the value "x" which came from "px" and produces a new parser accordingly.
+The result should be a parser of type "Parser b"
+
+> instance Monad Parser where
+> 	--return :: a -> Parser a
+> 	return = pure --from applicative
+> 	--(>>=) :: Parser a -> (a -> Parser b) -> Parser b
+> 	Parser px >>= f = Parser (λts -> 
+> 	concat [parse (f x) ts'
+		|(x, ts') <- px ts]
+
+|-------------------------| ts
+|-----|-------------------| ts'
+   x	       f x
+
+Because brainfuck is ambiguous to the well known language of the same name
+
+To use this combinator we combine a parser with a function:
+
+The satisfy parser takes in a function that is a predicate on Chars and returns the parsed value if it satisfies the predicate:
+
+> satisfy :: (Char -> Bool) -> Parser Char
+> satisfy p = item >>= λ t -> if p t
+>				then pure t
+>				else empty
+
+How does he always know where the indentation should go?
+It always lines up exactly with the tab spacing
+Further proof that Nick is a haskell
+
+This is prehaps the most useful combinator.
+Rather than the monadic definition, we can write one directly:
+
+> satisfy :: (Char -> Bool) -> Parser Char
+> satisfy p = Parser (λ ts -> case ts of
+>		[] -> []
+>		(t:ts') -> [(t, ts') | p t])
+				   |
+				   V
+				This is equivalent to:
+				if p t then [(t, ts')]
+					else []
+We can now parse a single char as follows:
+
+> char :: Char -> Parser Char
+> char c = satisfy (c==)
+
+or in other words:
+
+> char c = satisfy (λ c' -> c == c')
+
+Example: parse (char 'x') "xyz" = [('x', "yz")]

@@ -1,0 +1,13 @@
+Oooh spring
+Oh gods no, name.
+The hardest bit in all of comsci
+IT will provide subdomain redirecting to your VM
+
+<name>.spe.cs.bris.ac.uk
+
+Generate SSH key for cloud VM
+
+Santa's grotto github for instructions on setting up VM
+
+Security list rules on oracle cloud, ufw rules set, iptables flushed
+For traffic to actually hit the server
