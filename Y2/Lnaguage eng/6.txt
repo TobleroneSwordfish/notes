@@ -1,0 +1,9 @@
+1
+instance Pretty Robot
+--pretty :: Robot -> String
+pretty (Mov x r) = "f" ++ x ++ ", " ++ (pretty r)
+pretty (Rt r) = "r, " ++ (pretty r)
+pretty (Lt r) = "l, " ++ (pretty r)
+pretty Stop = stop
+
+2

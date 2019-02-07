@@ -1,0 +1,6 @@
+worksheet 2 q2
+
+Dijkstra's all pairs is O(|V||E|log|V|) when Dijkstra's from one vertex is O((|V| + |E|)log|V|)
+|V|(|V| + |E|)log|V| seems more logical? Or does it simplify to that somehow?
+
+2018 exam q8, 12

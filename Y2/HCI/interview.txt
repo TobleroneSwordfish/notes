@@ -1,0 +1,8 @@
+Browse page: depends on size of screen, show scroll bar, separate into availible and not, search function
+Logout: bad
+General layout: good
+Tabs not obvious, but tabs in general positive
+Confirmation of correct action on instructions page
+And a link to problem reporting
+Explicit home button
+Avoid image of user profile

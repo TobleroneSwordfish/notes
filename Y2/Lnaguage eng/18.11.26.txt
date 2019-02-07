@@ -1,0 +1,19 @@
+x in c? noooooo
+Even Nick is infected by XMOS
+
+oooOOOOoooOOOOhH
+Division
+
+Suppose we want to add an operation to our languge that performs division:
+
+> data Div_ k = Div k k
+If we want to provide a semantics that collects all the variables, we must provide an algebra:
+
+> divVars :: Div_ [Var] -> [Var]
+> divVars :: (Div_ xs ys) = xs ++ ys
+
+xs, ys :: [Var]
+
+If we want a language with both division and addition, we need to take the coproduct of Add_ and Div_
+
+This means expressions of the form 'Add_ :+: Div_'

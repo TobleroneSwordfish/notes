@@ -1,0 +1,7 @@
+Mutex protects critical sections, prevent race condition
+And semaphores and condition variables are literally the same thing but we have to know all of them because reasons.
+non-binary semaphores store buffer space etc
+
+Those glasses always look like they've melted down the face.
+
+I like petri nets much more than xc, can we just do the entire project in petri nets?

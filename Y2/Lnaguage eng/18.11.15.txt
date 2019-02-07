@@ -1,0 +1,139 @@
+But haskell is about 3 km above all that
+*30000000000km
+What is a byte?
+ive got paint all over me
+arty
+Doesn't count as all over, can see original colour of cloths MEH
+A string is actually a tree
+Ofc it is
+
+The second stage extracts semantics by applying an algebra.
+This is a recursive function defined as follows*:
+
+*we could have used a catamorphism, but that is out of the scope of this lecture series (and therefore beyod anything I will ever touch)
+
+> extract :: Functor f => (f b -> b) -> Free f b -> b
+> extract alg (Var x) = x
+> extract alg (Op op) = alg (fmap (extract alg) op)
+op :: f (Free f b)
+alg :: f b -> b
+
+Definition of second clause indentical to def of cata
+
+Finally we can combine these two stages to define an evaluation function:
+
+> eval :: Functor f => (f b -> b) -> (a -> b) -> Free f a -> b --jesus
+> eval alg gen = extract alg . fmap gen
+		   stage 2     stage 1
+
+"What is going on here is actually very simple" - Nick, right after defining that mess
+
+In pictures we can represent an operation with a box and a variable with a triangle,
+and alg will replace baxes, gen will replace triagonals
+
+^alternative universe
+like the bi-partite terminal connector?? (Dan loves it)
+Sounds good
+it's a line
+Fucks sakes
+
+First we define an algebra for a functor. Consider the Add_ functor from before:
+
+> add :: Add_ Int -> Int
+> add (x :+ y) = x + y
+
+We also need a generator from the type of our variables.
+
+I like strings
+Liquourice ones
+
+Variables are often given as strings:
+
+> type Var = String
+
+The generator for additon is a function from "Var -> Int"
+
+env :: Var -> Int
+env "x" = 3
+env "y" = 5
+env _ = 0
+
+Now THAT would be HCI
+And also probably the end of human progress
+
+walabaladiing
+
+hai jimmy
+o5 council
+WE KNOW THAT ONE
+
+^don't get that one tho
+^ references^2
+
+Suppose we want to evaluate this tree
+
+		|:+|
+	       /    \
+	      |:+|  /z\
+	     /   \
+            /x\  /y\
+
+fmap env
+
+		|:+|
+	       /    \
+	      |:+|   0
+	     /   \
+            3     5
+
+extract add
+
+		+
+	       / \
+	      +   0
+	     / \
+            3   5
+
+This is an example of "eval add env"
+
+I really hope the exam is just on the use of this stuff, because that is the bit that actually makes some kind of sense
+
+A second example is to collect all the variables in an expression as a list.
+For instance in "x + y + z" we see ["x", "y", "z"].
+
+To do this we provide a function "vars" which is defined using eval:
+
+> vars :: Free Add_ Var -> [Var]
+--Var = String
+> vars = eval alg gen
+>   where 
+>	gen :: Var -> [Var]
+>	gen x = [x]
+> 	
+>	alg :: Add_ [Var] -> [Var]
+>	alg (xs :+ ys) = xs ++ ys --duplicates would be removed here
+	xs and ys :: [Var]
+
+This executes as follows:
+
+		|:+|
+	       /    \
+	     |:+|   /z\
+	     /  \
+	    /x\ /y\
+
+fmap gen
+
+		|:+|
+	       /    \
+	     |:+|   |"z"|
+	     /  \
+	   |"x"||"y"|
+extract alg
+
+		 ++
+	       /    \
+	      ++   |"z"|
+	     /  \
+	   |"x"||"y"|
+
