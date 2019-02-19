@@ -18,8 +18,10 @@ pylab.rcParams['font.size'] = 24
 
 print(load_points_from_file("./train/basic_1.csv"))
 
+#does least squares
 def leastSquares(X, Y):
     Y = np.matrix(Y).T
     Xones = np.matrix([np.ones(X.size), X]).T
     ans = np.linalg.inv(Xones.T.dot(Xones)).dot(Xones.T).dot(Y)
     return ans
+
