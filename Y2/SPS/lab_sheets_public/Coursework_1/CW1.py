@@ -42,9 +42,9 @@ def split(array, n):
     return [array[:n]] + split(array[n:len(array)], n)
 
 #returns the total squared error between the original data points and the estimated ones
-def error(Y, estY):
-    range = abs(max(Y) - min(Y))
-    return sum([(y - y1)/range * (y - y1)/range for y, y1 in zip(Y, estY)])
+def error(X, Y, estY):
+    range = abs(max(Y) - min(Y)) * abs(max(X) - min(X))
+    return sum([(y - y1) * (y - y1) for y, y1 in zip(Y, estY)])/range
 
 data = load_points_from_file(sys.argv[1])
 
@@ -54,14 +54,14 @@ dataY = split(data[1], segmentLength)
 def getError(X, Y, n):
     poly = leastSquares(X, Y, n)
     evalY = evalArray(X, poly)
-    return error(Y, evalY)
+    return error(X, Y, evalY)
 
 def getPolynomial(X, Y, lastError, n = 2):
     poly = leastSquares(X, Y, n)
     evalY = evalArray(X, poly)
-    e = error(Y, evalY)
+    e = error(X, Y, evalY)
     print ("Error at degree {} is {} where the polynomial is {}".format(n - 1, e, poly))
-    if ((lastError - e) > .01):
+    if (lastError - e > .006):
         return getPolynomial(X, Y, e, n + 1)
     return leastSquares(X, Y, n - 1) #ehhhh, no worries
 
