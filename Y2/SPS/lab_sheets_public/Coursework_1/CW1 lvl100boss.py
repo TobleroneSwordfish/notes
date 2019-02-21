@@ -2,6 +2,7 @@ from __future__ import print_function # to avoid issues between Python 2 and 3 p
 
 import numpy as np
 import sys
+import math
 from scipy import stats
 from skimage import data, io, color, transform, exposure
 from pprint import pprint
@@ -24,17 +25,21 @@ def leastSquares(X, Y, n):
     ans = np.linalg.inv(XMatrix.T.dot(XMatrix)).dot(XMatrix.T).dot(Y)
     return ans
 
+
 #returns X with every element raised to n, kinda pointless but eh
 def nDegree(X, n):
    return [x ** n for x in X]
 
 #evaluates each point in X for the polynomial represented by coefficients
-def evalArray(X, coefficients):
-    return [eval(x, coefficients) for x in X]
+def evalArray(X, coefficients, f):
+    return [f(x, coefficients) for x in X]
 
 #evaluates the data point x with a polynomial represented by coefficients
-def eval(x, coefficients):
+def evalPoly(x, coefficients):
     return sum([c * (x ** i) for i, c in enumerate(coefficients)])
+
+def evalSin(x, coefficients):
+    return sum([c * (math.sin(x) ** i) for i, c in enumerate(coefficients)])
 
 def split(array, n):
     if len(array) == n:
@@ -51,19 +56,29 @@ data = load_points_from_file(sys.argv[1])
 dataX = split(data[0], segmentLength)
 dataY = split(data[1], segmentLength)
 
-def getError(X, Y, n):
+def getError(X, Y, n, f):
     poly = leastSquares(X, Y, n)
-    evalY = evalArray(X, poly)
+    evalY = evalArray(X, poly, f)
     return error(X, Y, evalY)
 
-def getPolynomial(X, Y, lastError, n = 2):
-    poly = leastSquares(X, Y, n)
-    evalY = evalArray(X, poly)
-    e = error(X, Y, evalY)
-    print ("Error at degree {} is {} where the polynomial is {}".format(n - 1, e, poly))
-    if (lastError - e > .006):
-        return getPolynomial(X, Y, e, n + 1)
-    return leastSquares(X, Y, n - 1) #ehhhh, no worries
+# def getPolynomial(X, Y, lastError, n = 2):
+#     poly = leastSquares(X, Y, n)
+#     evalY = evalArray(X, poly)
+#     e = error(X, Y, evalY)
+#     print ("Error at degree {} is {} where the polynomial is {}".format(n - 1, e, poly))
+#     if (lastError - e > .006):
+#         return getPolynomial(X, Y, e, n + 1)
+#     return leastSquares(X, Y, n - 1) #ehhhh, no worries
+
+def getPolynomial(X, Y):
+    # straight = leastSquares(X, Y, 1)
+    # gay = leastSquares(X, Y, 5)
+    thefuck = leastSquares(math.sin(X), Y, 2)
+    err1 = getError(X, Y, 1, evalPoly)
+    err2 = getError(X, Y, 5, evalPoly)
+    err3 = getError([math.sin(x) for x in X], Y, evalSin())
+    if ()
+        
 
 def truncate(n, decimals=0):
     multiplier = 10 ** decimals
