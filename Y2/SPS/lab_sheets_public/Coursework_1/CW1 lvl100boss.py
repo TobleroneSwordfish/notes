@@ -32,6 +32,7 @@ def nDegree(X, n):
 
 #evaluates each point in X for the polynomial represented by coefficients
 def evalArray(X, coefficients, f):
+    print("Evaluating function {} with coefficients {}".format(f,coefficients))
     return [f(x, coefficients) for x in X]
 
 #evaluates the data point x with a polynomial represented by coefficients
@@ -47,37 +48,38 @@ def split(array, n):
     return [array[:n]] + split(array[n:len(array)], n)
 
 #returns the total squared error between the original data points and the estimated ones
-def error(X, Y, estY):
-    range = abs(max(Y) - min(Y)) * abs(max(X) - min(X))
-    return sum([(y - y1) * (y - y1) for y, y1 in zip(Y, estY)])/range
+def error(Y, estY):
+    return sum([(y - y1) * (y - y1) for y, y1 in zip(Y, estY)])
 
 data = load_points_from_file(sys.argv[1])
 
-dataX = split(data[0], segmentLength)
-dataY = split(data[1], segmentLength)
+dataX = [split(data[0], segmentLength)[5]]
+dataY = [split(data[1], segmentLength)[5]]
 
 def getError(X, Y, n, f):
     poly = leastSquares(X, Y, n)
     evalY = evalArray(X, poly, f)
-    return error(X, Y, evalY)
+    return error(Y, evalY)
 
-# def getPolynomial(X, Y, lastError, n = 2):
-#     poly = leastSquares(X, Y, n)
-#     evalY = evalArray(X, poly)
-#     e = error(X, Y, evalY)
-#     print ("Error at degree {} is {} where the polynomial is {}".format(n - 1, e, poly))
-#     if (lastError - e > .006):
-#         return getPolynomial(X, Y, e, n + 1)
-#     return leastSquares(X, Y, n - 1) #ehhhh, no worries
-
-def getPolynomial(X, Y):
-    # straight = leastSquares(X, Y, 1)
-    # gay = leastSquares(X, Y, 5)
-    thefuck = leastSquares(math.sin(X), Y, 2)
-    err1 = getError(X, Y, 1, evalPoly)
+def getFunction(X, Y):
+    err1 = getError(X, Y, 2, evalPoly)
+    print("Straight err = {}".format(err1))
     err2 = getError(X, Y, 5, evalPoly)
-    err3 = getError([math.sin(x) for x in X], Y, evalSin())
-    if ()
+    print("Poly err = {}".format(err2))
+    err3 = getError([math.sin(x) for x in X], Y, 2, evalSin)
+    print("Sin error = {}".format(err3))
+    return evalPoly, leastSquares(X, Y, 5)
+    errs = [err1, err2, err3]
+    if (min(errs) == err1):
+        print("Straight")
+        return evalPoly, leastSquares(X, Y, 2)
+    elif (min(errs) == err2):
+        print("Poly")
+        return evalPoly, leastSquares(X, Y, 5)
+    elif (min(errs) == err3):
+        print("Sin")
+        return evalSin, leastSquares([math.sin(x) for x in X], Y, 2)
+    
         
 
 def truncate(n, decimals=0):
@@ -89,14 +91,14 @@ def printPoly(coefficients):
     
 
 # As = [leastSquares(x, y, 3) for x, y in zip(dataX, dataY)]
-# As = [getPolynomial(X, Y, getError(X, Y, 1)) for X, Y in zip(dataX, dataY)]
+As = [getFunction(X, Y) for X, Y in zip(dataX, dataY)]
 
-ymxc = 
+# print([printPoly(c.A1) for c in As])
 
-print([printPoly(c.A1) for c in As])
+print(As)
 
 for i, x in enumerate(dataX):
-    plt.plot(x, evalArray(x, As[i].A1))
+    plt.plot(x, evalArray(x, As[i][1].A1, As[i][0]))
 
 
 [plt.scatter(x, y) for x, y in zip(dataX, dataY)]
