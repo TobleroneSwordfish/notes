@@ -29,6 +29,8 @@ def evalPoly(x, coefficients):
     return sum([c * (x ** i) for i, c in enumerate(coefficients)])
 
 def evalSin(x, coefficients):
+    #print(coefficients)
+    print(coefficients[0]*math.sin(x)**0+coefficients[1]*math.sin(x)**1, ',' , x)
     return sum([c * (math.sin(x) ** i) for i, c in enumerate(coefficients)])
 
 def split(array, n):
@@ -37,20 +39,24 @@ def split(array, n):
     return [array[:n]] + split(array[n:len(array)], n)
 #returns the total squared error between the original data points and the estimated ones
 def error(Y, estY):
-    return sum([(y - y1) * (y - y1) for y, y1 in zip(Y, estY)]).item(0)
+    #print(Y,estY)
+    return sum([(y - y1)**2 for y, y1 in zip(Y, estY)]).item(0)
 
 def getError(X, Y, n, f):
-    poly = leastSquares(X, Y, n)
+    EX = X
+    if (f == evalSin):
+        EX = [math.sin(x) for x in X]
+    poly = leastSquares(EX, Y, n)
     evalY = evalArray(X, poly, f)
     return error(Y, evalY)
 
 def getFunction(X, Y):
-    errs = [getError(X, Y, 2, evalPoly), getError(X, Y, 5, evalPoly), getError([math.sin(x) for x in X], Y, 2, evalSin)]
-    return evalPoly, leastSquares(X, Y, 5), errs[1]
+
+    errs = [getError(X, Y, 2, evalPoly), getError(X, Y, 4, evalPoly), getError(X, Y, 2, evalSin)]
     if (min(errs) == errs[0]):
         return evalPoly, leastSquares(X, Y, 2), errs[0]
     elif (min(errs) == errs[1]):
-        return evalPoly, leastSquares(X, Y, 5), errs[1]
+        return evalPoly, leastSquares(X, Y, 4), errs[1]
     elif (min(errs) == errs[2]):
         return evalSin, leastSquares([math.sin(x) for x in X], Y, 2), errs[2]
 
